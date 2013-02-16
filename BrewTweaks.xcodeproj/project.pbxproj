@@ -1,0 +1,306 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1C6DA48316D048DB00DC1282 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6DA48216D048DB00DC1282 /* UIKit.framework */; };
+		1C6DA48516D048DB00DC1282 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6DA48416D048DB00DC1282 /* Foundation.framework */; };
+		1C6DA48716D048DB00DC1282 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6DA48616D048DB00DC1282 /* CoreGraphics.framework */; };
+		1C6DA48D16D048DB00DC1282 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1C6DA48B16D048DB00DC1282 /* InfoPlist.strings */; };
+		1C6DA48F16D048DB00DC1282 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6DA48E16D048DB00DC1282 /* main.m */; };
+		1C6DA49316D048DB00DC1282 /* BrewTweaksAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6DA49216D048DB00DC1282 /* BrewTweaksAppDelegate.m */; };
+		1C6DA49516D048DB00DC1282 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C6DA49416D048DB00DC1282 /* Default.png */; };
+		1C6DA49716D048DB00DC1282 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C6DA49616D048DB00DC1282 /* Default@2x.png */; };
+		1C6DA49916D048DB00DC1282 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C6DA49816D048DB00DC1282 /* Default-568h@2x.png */; };
+		1C6DA49C16D048DB00DC1282 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C6DA49A16D048DB00DC1282 /* MainStoryboard.storyboard */; };
+		1C6DA49F16D048DB00DC1282 /* BrewTweaksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6DA49E16D048DB00DC1282 /* BrewTweaksViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1C6DA47F16D048DB00DC1282 /* BrewTweaks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrewTweaks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C6DA48216D048DB00DC1282 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1C6DA48416D048DB00DC1282 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1C6DA48616D048DB00DC1282 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1C6DA48A16D048DB00DC1282 /* BrewTweaks-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BrewTweaks-Info.plist"; sourceTree = "<group>"; };
+		1C6DA48C16D048DB00DC1282 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1C6DA48E16D048DB00DC1282 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1C6DA49016D048DB00DC1282 /* BrewTweaks-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BrewTweaks-Prefix.pch"; sourceTree = "<group>"; };
+		1C6DA49116D048DB00DC1282 /* BrewTweaksAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrewTweaksAppDelegate.h; sourceTree = "<group>"; };
+		1C6DA49216D048DB00DC1282 /* BrewTweaksAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrewTweaksAppDelegate.m; sourceTree = "<group>"; };
+		1C6DA49416D048DB00DC1282 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		1C6DA49616D048DB00DC1282 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		1C6DA49816D048DB00DC1282 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		1C6DA49B16D048DB00DC1282 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		1C6DA49D16D048DB00DC1282 /* BrewTweaksViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrewTweaksViewController.h; sourceTree = "<group>"; };
+		1C6DA49E16D048DB00DC1282 /* BrewTweaksViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrewTweaksViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1C6DA47C16D048DB00DC1282 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C6DA48316D048DB00DC1282 /* UIKit.framework in Frameworks */,
+				1C6DA48516D048DB00DC1282 /* Foundation.framework in Frameworks */,
+				1C6DA48716D048DB00DC1282 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1C6DA47616D048DB00DC1282 = {
+			isa = PBXGroup;
+			children = (
+				1C6DA48816D048DB00DC1282 /* BrewTweaks */,
+				1C6DA48116D048DB00DC1282 /* Frameworks */,
+				1C6DA48016D048DB00DC1282 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1C6DA48016D048DB00DC1282 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1C6DA47F16D048DB00DC1282 /* BrewTweaks.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1C6DA48116D048DB00DC1282 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C6DA48216D048DB00DC1282 /* UIKit.framework */,
+				1C6DA48416D048DB00DC1282 /* Foundation.framework */,
+				1C6DA48616D048DB00DC1282 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1C6DA48816D048DB00DC1282 /* BrewTweaks */ = {
+			isa = PBXGroup;
+			children = (
+				1C6DA49116D048DB00DC1282 /* BrewTweaksAppDelegate.h */,
+				1C6DA49216D048DB00DC1282 /* BrewTweaksAppDelegate.m */,
+				1C6DA49A16D048DB00DC1282 /* MainStoryboard.storyboard */,
+				1C6DA49D16D048DB00DC1282 /* BrewTweaksViewController.h */,
+				1C6DA49E16D048DB00DC1282 /* BrewTweaksViewController.m */,
+				1C6DA48916D048DB00DC1282 /* Supporting Files */,
+			);
+			path = BrewTweaks;
+			sourceTree = "<group>";
+		};
+		1C6DA48916D048DB00DC1282 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1C6DA48A16D048DB00DC1282 /* BrewTweaks-Info.plist */,
+				1C6DA48B16D048DB00DC1282 /* InfoPlist.strings */,
+				1C6DA48E16D048DB00DC1282 /* main.m */,
+				1C6DA49016D048DB00DC1282 /* BrewTweaks-Prefix.pch */,
+				1C6DA49416D048DB00DC1282 /* Default.png */,
+				1C6DA49616D048DB00DC1282 /* Default@2x.png */,
+				1C6DA49816D048DB00DC1282 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1C6DA47E16D048DB00DC1282 /* BrewTweaks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C6DA4A216D048DB00DC1282 /* Build configuration list for PBXNativeTarget "BrewTweaks" */;
+			buildPhases = (
+				1C6DA47B16D048DB00DC1282 /* Sources */,
+				1C6DA47C16D048DB00DC1282 /* Frameworks */,
+				1C6DA47D16D048DB00DC1282 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BrewTweaks;
+			productName = BrewTweaks;
+			productReference = 1C6DA47F16D048DB00DC1282 /* BrewTweaks.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1C6DA47716D048DB00DC1282 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = BrewTweaks;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Pamela Ocampo";
+			};
+			buildConfigurationList = 1C6DA47A16D048DB00DC1282 /* Build configuration list for PBXProject "BrewTweaks" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1C6DA47616D048DB00DC1282;
+			productRefGroup = 1C6DA48016D048DB00DC1282 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1C6DA47E16D048DB00DC1282 /* BrewTweaks */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1C6DA47D16D048DB00DC1282 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C6DA48D16D048DB00DC1282 /* InfoPlist.strings in Resources */,
+				1C6DA49516D048DB00DC1282 /* Default.png in Resources */,
+				1C6DA49716D048DB00DC1282 /* Default@2x.png in Resources */,
+				1C6DA49916D048DB00DC1282 /* Default-568h@2x.png in Resources */,
+				1C6DA49C16D048DB00DC1282 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1C6DA47B16D048DB00DC1282 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C6DA48F16D048DB00DC1282 /* main.m in Sources */,
+				1C6DA49316D048DB00DC1282 /* BrewTweaksAppDelegate.m in Sources */,
+				1C6DA49F16D048DB00DC1282 /* BrewTweaksViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1C6DA48B16D048DB00DC1282 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1C6DA48C16D048DB00DC1282 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1C6DA49A16D048DB00DC1282 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1C6DA49B16D048DB00DC1282 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1C6DA4A016D048DB00DC1282 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1C6DA4A116D048DB00DC1282 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1C6DA4A316D048DB00DC1282 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BrewTweaks/BrewTweaks-Prefix.pch";
+				INFOPLIST_FILE = "BrewTweaks/BrewTweaks-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1C6DA4A416D048DB00DC1282 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BrewTweaks/BrewTweaks-Prefix.pch";
+				INFOPLIST_FILE = "BrewTweaks/BrewTweaks-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1C6DA47A16D048DB00DC1282 /* Build configuration list for PBXProject "BrewTweaks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C6DA4A016D048DB00DC1282 /* Debug */,
+				1C6DA4A116D048DB00DC1282 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C6DA4A216D048DB00DC1282 /* Build configuration list for PBXNativeTarget "BrewTweaks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C6DA4A316D048DB00DC1282 /* Debug */,
+				1C6DA4A416D048DB00DC1282 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1C6DA47716D048DB00DC1282 /* Project object */;
+}
