@@ -7,10 +7,12 @@
 //
 
 #import "MainTableViewController.h"
-
-@interface MainTableViewController ()
+#import "BrewMethodDataController.h"
+#import "BrewMethod.h"
+/*@interface MainTableViewController ()
 
 @end
+*/
 
 @implementation MainTableViewController
 
@@ -23,6 +25,12 @@
     return self;
 }
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.dataController = [[BrewMethodDataController alloc] init];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -31,8 +39,8 @@
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-//     self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.navigationItem.title = @"Select a Brew Method";
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+  
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,36 +53,33 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    
+    return [self.dataController countOfList];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"BrewMethodCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    // Configure the cell...
-    
+
+    BrewMethod *methodAtIndex = [self.dataController objectInListAtIndex:indexPath.row];
+    [[cell textLabel] setText:methodAtIndex.name];
+        
     return cell;
 }
 
-/*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return NO;
 }
-*/
 
 /*
 // Override to support editing the table view.

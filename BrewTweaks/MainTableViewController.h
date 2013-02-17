@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@class BrewMethodDataController;
 
 @interface MainTableViewController : UITableViewController
-
+@property (strong, nonatomic) BrewMethodDataController *dataController;
 @end

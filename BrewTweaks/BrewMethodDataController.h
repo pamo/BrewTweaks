@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 @class BrewMethod;
-
 @interface BrewMethodDataController : NSObject
 @property (nonatomic, copy) NSMutableArray *masterBrewMethodList;
 - (NSUInteger)countOfList;
 - (BrewMethod *)objectInListAtIndex:(NSUInteger)theIndex;
 - (void)addBrewMethodWithBrewMethod:(BrewMethod *)method;
 @end
+

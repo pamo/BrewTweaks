@@ -14,29 +14,34 @@
 @end
 
 @implementation BrewMethodDataController
+-(void)initializeDefaultDataList{
+    NSMutableArray *methodList = [[NSMutableArray alloc] init];
+    self.masterBrewMethodList = methodList;
+    BrewMethod *method;
+    NSLog(@"Adding a french press to default data list");
+    method = [[BrewMethod alloc] initWithName:@"French Press"];
+    [self addBrewMethodWithBrewMethod:method];
+    NSLog(@"Added French Press");
+    method = [[BrewMethod alloc] initWithName:@"Moka Pot"];
+    [self addBrewMethodWithBrewMethod:method];
+    
+    method = [[BrewMethod alloc] initWithName:@"Chemex"];
+    [self addBrewMethodWithBrewMethod:method];
+    
+    method = [[BrewMethod alloc] initWithName:@"AeroPress"];
+    [self addBrewMethodWithBrewMethod:method];
+}
+- (void)setMasterBrewMethodList:(NSMutableArray *)newList {
+    if (_masterBrewMethodList != newList) {
+        _masterBrewMethodList = [newList mutableCopy];
+    }
+}
 - (id)init {
     if (self = [super init]) {
         [self initializeDefaultDataList];
         return self;
     }
     return nil;
-}
--(void)initializeDefaultDataList{
-    NSMutableArray *methodList = [[NSMutableArray alloc] init];
-    self.masterBrewMethodList = methodList;
-    BrewMethod *method;
-    method = [[BrewMethod alloc] initWithName:@"French Press"];
-    [self addBrewMethodWithBrewMethod:method];
-    method = [[BrewMethod alloc] initWithName:@"Chemex"];
-    [self addBrewMethodWithBrewMethod:method];
-    method = [[BrewMethod alloc] initWithName:@"Moka Pot"];
-    [self addBrewMethodWithBrewMethod:method];
-    
-}
-- (void)setMasterBrewMethodList:(NSMutableArray *)newList {
-    if (_masterBrewMethodList != newList) {
-        _masterBrewMethodList = [newList mutableCopy];
-    }
 }
 - (NSUInteger)countOfList {
     return [self.masterBrewMethodList count];

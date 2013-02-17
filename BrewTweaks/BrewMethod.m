@@ -9,11 +9,13 @@
 #import "BrewMethod.h"
 
 @implementation BrewMethod
-    -(id)initWithName:(NSString *)name{
-        self = [super init];
-        if(self){
-            _name = name;
-        }
-        return nil;
+-(id)initWithName:(NSString *)name{
+    self = [super init];
+    if(self){
+        _name = name;
+        return self;
     }
+    return nil;
+    
+}
 @end
