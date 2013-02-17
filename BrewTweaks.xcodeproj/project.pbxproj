@@ -17,7 +17,9 @@
 		1C6DA49716D048DB00DC1282 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C6DA49616D048DB00DC1282 /* Default@2x.png */; };
 		1C6DA49916D048DB00DC1282 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C6DA49816D048DB00DC1282 /* Default-568h@2x.png */; };
 		1C6DA49C16D048DB00DC1282 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C6DA49A16D048DB00DC1282 /* MainStoryboard.storyboard */; };
-		1C6DA49F16D048DB00DC1282 /* BrewTweaksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6DA49E16D048DB00DC1282 /* BrewTweaksViewController.m */; };
+		1C6DA4A716D04EFF00DC1282 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6DA4A616D04EFF00DC1282 /* MainTableViewController.m */; };
+		1C6DA4AA16D13E7900DC1282 /* BrewMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6DA4A916D13E7900DC1282 /* BrewMethod.m */; };
+		1C6DA4AD16D161FF00DC1282 /* BrewMethodDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6DA4AC16D161FF00DC1282 /* BrewMethodDataController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +37,12 @@
 		1C6DA49616D048DB00DC1282 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1C6DA49816D048DB00DC1282 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1C6DA49B16D048DB00DC1282 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		1C6DA49D16D048DB00DC1282 /* BrewTweaksViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrewTweaksViewController.h; sourceTree = "<group>"; };
-		1C6DA49E16D048DB00DC1282 /* BrewTweaksViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrewTweaksViewController.m; sourceTree = "<group>"; };
+		1C6DA4A516D04EFF00DC1282 /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
+		1C6DA4A616D04EFF00DC1282 /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
+		1C6DA4A816D13E7900DC1282 /* BrewMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrewMethod.h; sourceTree = "<group>"; };
+		1C6DA4A916D13E7900DC1282 /* BrewMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrewMethod.m; sourceTree = "<group>"; };
+		1C6DA4AB16D161FF00DC1282 /* BrewMethodDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrewMethodDataController.h; sourceTree = "<group>"; };
+		1C6DA4AC16D161FF00DC1282 /* BrewMethodDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrewMethodDataController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,9 +92,13 @@
 				1C6DA49116D048DB00DC1282 /* BrewTweaksAppDelegate.h */,
 				1C6DA49216D048DB00DC1282 /* BrewTweaksAppDelegate.m */,
 				1C6DA49A16D048DB00DC1282 /* MainStoryboard.storyboard */,
-				1C6DA49D16D048DB00DC1282 /* BrewTweaksViewController.h */,
-				1C6DA49E16D048DB00DC1282 /* BrewTweaksViewController.m */,
+				1C6DA4A516D04EFF00DC1282 /* MainTableViewController.h */,
+				1C6DA4A616D04EFF00DC1282 /* MainTableViewController.m */,
 				1C6DA48916D048DB00DC1282 /* Supporting Files */,
+				1C6DA4A816D13E7900DC1282 /* BrewMethod.h */,
+				1C6DA4A916D13E7900DC1282 /* BrewMethod.m */,
+				1C6DA4AB16D161FF00DC1282 /* BrewMethodDataController.h */,
+				1C6DA4AC16D161FF00DC1282 /* BrewMethodDataController.m */,
 			);
 			path = BrewTweaks;
 			sourceTree = "<group>";
@@ -176,7 +186,9 @@
 			files = (
 				1C6DA48F16D048DB00DC1282 /* main.m in Sources */,
 				1C6DA49316D048DB00DC1282 /* BrewTweaksAppDelegate.m in Sources */,
-				1C6DA49F16D048DB00DC1282 /* BrewTweaksViewController.m in Sources */,
+				1C6DA4A716D04EFF00DC1282 /* MainTableViewController.m in Sources */,
+				1C6DA4AA16D13E7900DC1282 /* BrewMethod.m in Sources */,
+				1C6DA4AD16D161FF00DC1282 /* BrewMethodDataController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
