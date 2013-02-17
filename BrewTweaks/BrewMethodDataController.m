@@ -18,10 +18,10 @@
     NSMutableArray *methodList = [[NSMutableArray alloc] init];
     self.masterBrewMethodList = methodList;
     BrewMethod *method;
-    NSLog(@"Adding a french press to default data list");
+    
     method = [[BrewMethod alloc] initWithName:@"French Press"];
     [self addBrewMethodWithBrewMethod:method];
-    NSLog(@"Added French Press");
+    
     method = [[BrewMethod alloc] initWithName:@"Moka Pot"];
     [self addBrewMethodWithBrewMethod:method];
     

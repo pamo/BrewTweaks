@@ -13,7 +13,7 @@
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-          NSLog(@"in autorelease pool");
+    
           return UIApplicationMain(argc, argv, nil, NSStringFromClass([BrewTweaksAppDelegate class]));
     }
 }
