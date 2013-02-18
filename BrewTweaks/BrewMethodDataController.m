@@ -16,23 +16,19 @@
 @implementation BrewMethodDataController
 -(void)initializeDefaultDataList{
     NSMutableArray *methodList = [[NSMutableArray alloc] init];
+    NSMutableArray *grindTypes = [[NSMutableArray alloc] init];
+    grindTypes[0] = @"Coarse";
+    grindTypes[1] = @"Medium Coarse";
+    grindTypes[2] = @"Medium";
+    grindTypes[3] = @"Fine";    
+    
     self.masterBrewMethodList = methodList;
     BrewMethod *method;
     
-    method = [[BrewMethod alloc] initWithName:@"French Press"];
-//    method.setProperties:@"medium" 28.0 420.0 200.0;
-    // to-do how to access method object setProperties method
-    // what does alloc do
+    method = [[BrewMethod alloc] initWithName:@"French Press" grind:grindTypes[0] coffeeAmount:28.0 waterAmount:392.0 temp:200.0];
+
     [self addBrewMethodWithBrewMethod:method];
     
-    method = [[BrewMethod alloc] initWithName:@"Moka Pot"];
-    [self addBrewMethodWithBrewMethod:method];
-    
-    method = [[BrewMethod alloc] initWithName:@"Chemex"];
-    [self addBrewMethodWithBrewMethod:method];
-    
-    method = [[BrewMethod alloc] initWithName:@"AeroPress"];
-    [self addBrewMethodWithBrewMethod:method];
 }
 - (void)setMasterBrewMethodList:(NSMutableArray *)newList {
     if (_masterBrewMethodList != newList) {
