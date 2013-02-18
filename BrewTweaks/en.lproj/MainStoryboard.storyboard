@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="-666" y="741"/>
         </scene>
-        <!--View Controller-->
+        <!--Brew Method Detail View Controller-->
         <scene sceneID="mAF-tY-3dU">
             <objects>
-                <viewController id="6js-RT-pvf" sceneMemberID="viewController">
+                <viewController id="6js-RT-pvf" customClass="BrewMethodDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p1m-cF-iN6">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -78,6 +78,12 @@
         </scene>
     </scenes>
     <classes>
+        <class className="BrewMethodDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BrewMethodDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="brewMethodNameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="MainTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainTableViewController.h"/>
         </class>

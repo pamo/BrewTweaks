@@ -20,6 +20,7 @@
 		1C6DA4A716D04EFF00DC1282 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6DA4A616D04EFF00DC1282 /* MainTableViewController.m */; };
 		1C6DA4AA16D13E7900DC1282 /* BrewMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6DA4A916D13E7900DC1282 /* BrewMethod.m */; };
 		1C6DA4AD16D161FF00DC1282 /* BrewMethodDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6DA4AC16D161FF00DC1282 /* BrewMethodDataController.m */; };
+		1C6DA4CA16D1B19500DC1282 /* BrewMethodDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6DA4C916D1B19500DC1282 /* BrewMethodDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		1C6DA4A916D13E7900DC1282 /* BrewMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrewMethod.m; sourceTree = "<group>"; };
 		1C6DA4AB16D161FF00DC1282 /* BrewMethodDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrewMethodDataController.h; sourceTree = "<group>"; };
 		1C6DA4AC16D161FF00DC1282 /* BrewMethodDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrewMethodDataController.m; sourceTree = "<group>"; };
+		1C6DA4C816D1B19500DC1282 /* BrewMethodDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrewMethodDetailViewController.h; sourceTree = "<group>"; };
+		1C6DA4C916D1B19500DC1282 /* BrewMethodDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrewMethodDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 				1C6DA49A16D048DB00DC1282 /* MainStoryboard.storyboard */,
 				1C6DA4A516D04EFF00DC1282 /* MainTableViewController.h */,
 				1C6DA4A616D04EFF00DC1282 /* MainTableViewController.m */,
+				1C6DA4C816D1B19500DC1282 /* BrewMethodDetailViewController.h */,
+				1C6DA4C916D1B19500DC1282 /* BrewMethodDetailViewController.m */,
 				1C6DA48916D048DB00DC1282 /* Supporting Files */,
 				1C6DA4A816D13E7900DC1282 /* BrewMethod.h */,
 				1C6DA4A916D13E7900DC1282 /* BrewMethod.m */,
@@ -189,6 +194,7 @@
 				1C6DA4A716D04EFF00DC1282 /* MainTableViewController.m in Sources */,
 				1C6DA4AA16D13E7900DC1282 /* BrewMethod.m in Sources */,
 				1C6DA4AD16D161FF00DC1282 /* BrewMethodDataController.m in Sources */,
+				1C6DA4CA16D1B19500DC1282 /* BrewMethodDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +317,7 @@
 				1C6DA4A416D048DB00DC1282 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

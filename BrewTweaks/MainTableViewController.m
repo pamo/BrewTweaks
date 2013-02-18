@@ -7,6 +7,8 @@
 //
 
 #import "MainTableViewController.h"
+
+#import "BrewMethodDetailViewController.h"
 #import "BrewMethodDataController.h"
 #import "BrewMethod.h"
 /*@interface MainTableViewController ()
@@ -112,16 +114,12 @@
 */
 
 #pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"ShowBrewMethodDetail"]) {
+        BrewMethodDetailViewController *detailViewController = [segue destinationViewController];
+        
+        detailViewController.brewMethod = [self.dataController objectInListAtIndex:[self.tableView indexPathForSelectedRow].row];
+    }
 }
 
 @end
