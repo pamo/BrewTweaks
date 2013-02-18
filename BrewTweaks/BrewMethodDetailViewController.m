@@ -32,8 +32,9 @@
     BrewMethod *theBrewMethod = self.brewMethod;
     
     if (theBrewMethod) {
-        self.brewMethodNameLabel.text = theBrewMethod.name;
         self.navigationItem.title = theBrewMethod.name;
+        self.grindSizeLabel.text = theBrewMethod.grind;
+        self.waterAmountInput.text = [NSString stringWithFormat:@"%f", theBrewMethod.waterAmount];
     }
 }
 
