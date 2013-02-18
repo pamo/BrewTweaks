@@ -9,19 +9,17 @@
 #import "BrewMethod.h"
 
 @implementation BrewMethod
--(id)initWithName:(NSString *)name{
+-(id)initWithName:(NSString *)name grind:(NSString *)grind coffeeAmount:(double)coffeeAmount waterAmount:(double)waterAmount temp:(double)temp{
     self = [super init];
     if(self){
         _name = name;
+        _grind = grind;
+        _coffeeAmount = coffeeAmount;
+        _waterAmount = waterAmount;
+        _temp = temp;
         return self;
     }
     return nil;
     
-}
--(void)setProperties:(NSString *)grind coffeeAmount:(NSDecimal *)coffeeAmount waterAmount:(NSDecimal *)waterAmount temp:(NSDecimal *)temp{
-    _grind = grind;
-    _coffeeAmount = coffeeAmount;
-    _waterAmount = waterAmount;
-    _temp = temp;
 }
 @end
