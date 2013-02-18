@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @class BrewMethod;
-@interface BrewMethodDetailViewController : UIViewController
+@interface BrewMethodDetailViewController : UITableViewController
 
 @property (strong, nonatomic) BrewMethod *brewMethod;
 @property (weak, nonatomic) IBOutlet UILabel *brewMethodNameLabel;

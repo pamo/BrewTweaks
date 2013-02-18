@@ -9,15 +9,16 @@
 #import <Foundation/Foundation.h>
 
 @interface BrewMethod : NSObject
-    @property (nonatomic, copy) NSString *name;
-    @property (nonatomic, copy) NSString *grind;
-    @property (nonatomic) NSDecimal *ratio;
-    @property (nonatomic) NSDecimal *coffeeAmount;
-    @property (nonatomic) NSDecimal *waterAmount;
-    @property (nonatomic) NSDecimal *temp;
-    @property (nonatomic) NSInteger *coffeeUnit;
-    @property (nonatomic) NSInteger *waterUnit;
-    @property (nonatomic) NSInteger *tempUnit;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *grind;
+@property (nonatomic) NSDecimal *ratio;
+@property (nonatomic) NSDecimal *coffeeAmount;
+@property (nonatomic) NSDecimal *waterAmount;
+@property (nonatomic) NSDecimal *temp;
+@property (nonatomic) NSInteger *coffeeUnit;
+@property (nonatomic) NSInteger *waterUnit;
+@property (nonatomic) NSInteger *tempUnit;
 
-    -(id)initWithName:(NSString *)name;
+-(id)initWithName:(NSString *)name;
+-(void)setProperties:(NSString *)grind coffeeAmount:(NSDecimal *)coffeeAmount waterAmount:(NSDecimal *)waterAmount temp:(NSDecimal *)temp;
 @end

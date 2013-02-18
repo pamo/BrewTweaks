@@ -18,4 +18,10 @@
     return nil;
     
 }
+-(void)setProperties:(NSString *)grind coffeeAmount:(NSDecimal *)coffeeAmount waterAmount:(NSDecimal *)waterAmount temp:(NSDecimal *)temp{
+    _grind = grind;
+    _coffeeAmount = coffeeAmount;
+    _waterAmount = waterAmount;
+    _temp = temp;
+}
 @end

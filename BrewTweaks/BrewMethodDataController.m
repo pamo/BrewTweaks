@@ -20,6 +20,9 @@
     BrewMethod *method;
     
     method = [[BrewMethod alloc] initWithName:@"French Press"];
+//    method.setProperties:@"medium" 28.0 420.0 200.0;
+    // to-do how to access method object setProperties method
+    // what does alloc do
     [self addBrewMethodWithBrewMethod:method];
     
     method = [[BrewMethod alloc] initWithName:@"Moka Pot"];
