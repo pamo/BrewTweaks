@@ -28,6 +28,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="6js-RT-pvf" kind="push" id="vp4-0z-QXS"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -42,6 +45,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v8X-Xl-BwO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-666" y="741"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mAF-tY-3dU">
+            <objects>
+                <viewController id="6js-RT-pvf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p1m-cF-iN6">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="haM-sY-gR3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MPi-R9-lux" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-205" y="744"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="V75-e6-FXM">
