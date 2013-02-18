@@ -10,5 +10,14 @@
 
 @interface BrewMethod : NSObject
     @property (nonatomic, copy) NSString *name;
+    @property (nonatomic, copy) NSString *grind;
+    @property (nonatomic) NSDecimal *ratio;
+    @property (nonatomic) NSDecimal *coffeeAmount;
+    @property (nonatomic) NSDecimal *waterAmount;
+    @property (nonatomic) NSDecimal *temp;
+    @property (nonatomic) NSInteger *coffeeUnit;
+    @property (nonatomic) NSInteger *waterUnit;
+    @property (nonatomic) NSInteger *tempUnit;
+
     -(id)initWithName:(NSString *)name;
 @end
