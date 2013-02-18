@@ -29,7 +29,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="6js-RT-pvf" kind="push" id="vp4-0z-QXS"/>
+                                    <segue destination="6js-RT-pvf" kind="push" identifier="ShowBrewMethodDetail" id="vp4-0z-QXS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
