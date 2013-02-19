@@ -57,11 +57,11 @@
                         <sections>
                             <tableViewSection id="alp-5L-Yl6">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GrindDetail" textLabel="4wp-N7-z3A" detailTextLabel="Upj-Vy-EFV" style="IBUITableViewCellStyleValue1" id="Wcy-aV-BTm">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GrindSizeCell" textLabel="4wp-N7-z3A" detailTextLabel="Upj-Vy-EFV" style="IBUITableViewCellStyleValue1" id="Wcy-aV-BTm">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="999" text="Grind Size" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wp-N7-z3A">
@@ -69,7 +69,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upj-Vy-EFV">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" restorationIdentifier="" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upj-Vy-EFV">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -78,7 +78,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="lDz-nx-7BA">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WaterCell" id="lDz-nx-7BA">
                                         <rect key="frame" x="0.0" y="44" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -109,6 +109,9 @@
                                                         <segment title="g"/>
                                                         <segment title="oz"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="unitsChanged:" destination="gz9-HF-67X" eventType="valueChanged" id="nnO-jL-5VJ"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -124,7 +127,7 @@
                                             <constraint firstItem="dlB-l5-ahN" firstAttribute="centerY" secondItem="z61-Ry-dfH" secondAttribute="centerY" type="default" id="uOf-mb-f2G"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="b5I-WX-59c">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CoffeeCell" id="b5I-WX-59c">
                                         <rect key="frame" x="0.0" y="88" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -151,6 +154,9 @@
                                                         <segment title="g"/>
                                                         <segment title="oz"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="unitsChanged:" destination="gz9-HF-67X" eventType="valueChanged" id="3b3-fJ-hUn"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -165,7 +171,7 @@
                                             <constraint firstAttribute="trailing" secondItem="QV4-Lz-1LI" secondAttribute="trailing" constant="5" id="wuH-hL-9MY"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="oWN-K8-IIN">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TempCell" id="oWN-K8-IIN">
                                         <rect key="frame" x="0.0" y="132" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -192,6 +198,9 @@
                                                         <segment title="ºF"/>
                                                         <segment title="ºC"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="unitsChanged:" destination="gz9-HF-67X" eventType="valueChanged" id="qzc-PX-QRe"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -219,6 +228,15 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="BPy-cF-Q6I"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="coffeeAmountInput" destination="pAY-j1-GBU" id="vVg-Bj-Kdp"/>
+                        <outlet property="coffeeUnits" destination="QV4-Lz-1LI" id="nOM-CD-7fP"/>
+                        <outlet property="grindSizeLabel" destination="Upj-Vy-EFV" id="N0K-TZ-fS4"/>
+                        <outlet property="tempInput" destination="Sxy-BC-Ics" id="04Y-Ny-EVm"/>
+                        <outlet property="tempUnits" destination="enA-6S-YOF" id="o6E-yd-DU2"/>
+                        <outlet property="waterAmountInput" destination="cZc-kw-UJX" id="tIf-fU-fnQ"/>
+                        <outlet property="waterUnits" destination="z61-Ry-dfH" id="wfT-44-D2a"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Xr-qq-fPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -244,7 +262,14 @@
         <class className="BrewMethodDetailViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BrewMethodDetailViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="brewMethodNameLabel" candidateClass="UILabel"/>
+                <relationship kind="action" name="unitsChanged:" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="coffeeAmountInput" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="coffeeUnits" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="grindSizeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tempInput" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tempUnits" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="waterAmountInput" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="waterUnits" candidateClass="UISegmentedControl"/>
             </relationships>
         </class>
         <class className="MainTableViewController" superclassName="UITableViewController">

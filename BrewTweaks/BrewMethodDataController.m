@@ -29,6 +29,15 @@
 
     [self addBrewMethodWithBrewMethod:method];
     
+    method = [[BrewMethod alloc] initWithName:@"Chemex" grind:grindTypes[2] coffeeAmount:28.0 waterAmount:490.0 temp:200.0];
+    
+    [self addBrewMethodWithBrewMethod:method];
+    
+    
+    method = [[BrewMethod alloc] initWithName:@"AeroPress" grind:grindTypes[3] coffeeAmount:28.0 waterAmount:490.0 temp:200.0];
+    
+    [self addBrewMethodWithBrewMethod:method];
+    
 }
 - (void)setMasterBrewMethodList:(NSMutableArray *)newList {
     if (_masterBrewMethodList != newList) {

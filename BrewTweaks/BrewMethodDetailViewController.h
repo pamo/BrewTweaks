@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 @class BrewMethod;
-@interface BrewMethodDetailViewController : UITableViewController
+@interface BrewMethodDetailViewController : UITableViewController <UITextFieldDelegate>
+
 
 @property (strong, nonatomic) BrewMethod *brewMethod;
 
@@ -19,5 +20,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *waterUnits;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *coffeeUnits;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *tempUnits;
+
+-(IBAction)unitsChanged:(UISegmentedControl *)segmentedControl;
 
 @end
