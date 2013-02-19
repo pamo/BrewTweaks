@@ -58,15 +58,53 @@
     }
     return YES;
 }
--(IBAction)unitsChanged:(UISegmentedControl *)segmentedControl{
-    switch (segmentedControl.selectedSegmentIndex) {
+-(IBAction)coffeeUnitChanged{
+    switch (self.coffeeUnits.selectedSegmentIndex) {
         case 0:
-            NSLog(@"Water units are in grams");
+            NSLog(@"Coffee units are in grams");
+            self.brewMethod.coffeeAmount = self.brewMethod.coffeeAmount*28.0;
             break;
         case 1:
-            NSLog(@"Water units are in ounces");
+            NSLog(@"Coffee units are in ounces");
+            self.brewMethod.coffeeAmount = self.brewMethod.coffeeAmount/28.0;
+            break;
         default:
             break;
     }
+    self.coffeeAmountInput.text = [NSString stringWithFormat:@"%.2lf", self.brewMethod.coffeeAmount];
 }
+-(IBAction)waterUnitChanged{
+    switch (self.waterUnits.selectedSegmentIndex) {
+        case 0:
+            NSLog(@"Water units are in grams");
+            self.brewMethod.waterAmount = self.brewMethod.waterAmount*28.0;
+            break;
+        case 1:
+            NSLog(@"Water units are in ounces");
+            self.brewMethod.waterAmount = self.brewMethod.waterAmount/28.0;
+            break;
+        default:
+            break;
+    }
+    self.waterAmountInput.text = [NSString stringWithFormat:@"%.2lf", self.brewMethod.waterAmount];
+}
+-(IBAction)tempUnitChanged{
+    switch (self.tempUnits.selectedSegmentIndex) {
+        case 0:
+            NSLog(@"Temperature is in Fahrenheit");
+            self.brewMethod.temp = (self.brewMethod.temp-32)/1.8;
+            break;
+        case 1:
+            NSLog(@"Temperature is in Celsius");
+            self.brewMethod.temp = (self.brewMethod.temp*1.8)+32;
+            break;
+        default:
+            break;
+    }
+    self.tempInput.text = [NSString stringWithFormat:@"%.2lf", self.brewMethod.temp];
+}
+-(void)setAmount:(UITextField *) field amount:(double) amount{
+    
+}
+
 @end

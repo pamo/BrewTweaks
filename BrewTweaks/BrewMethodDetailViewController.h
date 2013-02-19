@@ -21,6 +21,10 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *coffeeUnits;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *tempUnits;
 
--(IBAction)unitsChanged:(UISegmentedControl *)segmentedControl;
+-(IBAction)coffeeUnitChanged;
+-(IBAction)waterUnitChanged;
+-(IBAction)tempUnitChanged;
+
+-(void)setAmount:(UITextField *) field amount:(double) amount;
 
 @end

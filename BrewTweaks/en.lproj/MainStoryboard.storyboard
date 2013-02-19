@@ -93,13 +93,12 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cZc-kw-UJX">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cZc-kw-UJX">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="110" type="user" id="Mif-lA-6xY"/>
-                                                        <constraint firstAttribute="height" constant="30" id="SPE-OT-8TE"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="z61-Ry-dfH">
                                                     <constraints>
@@ -110,21 +109,21 @@
                                                         <segment title="oz"/>
                                                     </segments>
                                                     <connections>
-                                                        <action selector="unitsChanged:" destination="gz9-HF-67X" eventType="valueChanged" id="nnO-jL-5VJ"/>
+                                                        <action selector="waterUnitChanged" destination="gz9-HF-67X" eventType="valueChanged" id="Vd1-kN-VlD"/>
                                                     </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="z61-Ry-dfH" firstAttribute="top" secondItem="cZc-kw-UJX" secondAttribute="top" type="default" id="Jux-rt-Mf0"/>
+                                            <constraint firstItem="z61-Ry-dfH" firstAttribute="top" secondItem="lDz-nx-7BA" secondAttribute="top" constant="6" id="G8f-ZL-MgF"/>
                                             <constraint firstItem="cZc-kw-UJX" firstAttribute="centerY" secondItem="lDz-nx-7BA" secondAttribute="centerY" type="default" id="OAV-st-pp7"/>
+                                            <constraint firstItem="dlB-l5-ahN" firstAttribute="top" secondItem="lDz-nx-7BA" secondAttribute="top" constant="11" id="SbZ-a7-xtO"/>
                                             <constraint firstAttribute="trailing" secondItem="z61-Ry-dfH" secondAttribute="trailing" constant="5" id="TMP-mP-Kgr"/>
                                             <constraint firstItem="z61-Ry-dfH" firstAttribute="baseline" secondItem="dlB-l5-ahN" secondAttribute="baseline" type="default" id="du1-iX-hBu"/>
                                             <constraint firstItem="dlB-l5-ahN" firstAttribute="leading" secondItem="lDz-nx-7BA" secondAttribute="leading" constant="10" id="kBc-QL-bzS"/>
                                             <constraint firstItem="dlB-l5-ahN" firstAttribute="baseline" secondItem="cZc-kw-UJX" secondAttribute="baseline" type="default" id="l1i-aF-Utz"/>
                                             <constraint firstItem="cZc-kw-UJX" firstAttribute="leading" secondItem="lDz-nx-7BA" secondAttribute="leading" constant="120" id="oFD-7Y-k1C"/>
-                                            <constraint firstItem="dlB-l5-ahN" firstAttribute="centerY" secondItem="z61-Ry-dfH" secondAttribute="centerY" type="default" id="uOf-mb-f2G"/>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CoffeeCell" id="b5I-WX-59c">
@@ -155,7 +154,7 @@
                                                         <segment title="oz"/>
                                                     </segments>
                                                     <connections>
-                                                        <action selector="unitsChanged:" destination="gz9-HF-67X" eventType="valueChanged" id="3b3-fJ-hUn"/>
+                                                        <action selector="coffeeUnitChanged" destination="gz9-HF-67X" eventType="valueChanged" id="EAf-hp-LjS"/>
                                                     </connections>
                                                 </segmentedControl>
                                             </subviews>
@@ -199,7 +198,7 @@
                                                         <segment title="ºC"/>
                                                     </segments>
                                                     <connections>
-                                                        <action selector="unitsChanged:" destination="gz9-HF-67X" eventType="valueChanged" id="qzc-PX-QRe"/>
+                                                        <action selector="tempUnitChanged" destination="gz9-HF-67X" eventType="valueChanged" id="7AN-n1-5RE"/>
                                                     </connections>
                                                 </segmentedControl>
                                             </subviews>
@@ -209,10 +208,10 @@
                                             <constraint firstItem="enA-6S-YOF" firstAttribute="baseline" secondItem="LTQ-j5-p9c" secondAttribute="baseline" type="default" id="1eq-hw-lra"/>
                                             <constraint firstItem="Sxy-BC-Ics" firstAttribute="leading" secondItem="oWN-K8-IIN" secondAttribute="leading" constant="120" id="1gS-G4-jcD"/>
                                             <constraint firstItem="LTQ-j5-p9c" firstAttribute="leading" secondItem="oWN-K8-IIN" secondAttribute="leading" constant="10" id="4hR-dx-xMg"/>
-                                            <constraint firstItem="enA-6S-YOF" firstAttribute="top" secondItem="Sxy-BC-Ics" secondAttribute="top" type="default" id="7Cz-ol-LUV"/>
-                                            <constraint firstItem="LTQ-j5-p9c" firstAttribute="centerY" secondItem="enA-6S-YOF" secondAttribute="centerY" type="default" id="Bz3-iX-xlp"/>
                                             <constraint firstItem="Sxy-BC-Ics" firstAttribute="centerY" secondItem="oWN-K8-IIN" secondAttribute="centerY" type="default" id="IiO-u5-lfe"/>
                                             <constraint firstAttribute="trailing" secondItem="enA-6S-YOF" secondAttribute="trailing" constant="5" id="KEM-jt-gOC"/>
+                                            <constraint firstItem="enA-6S-YOF" firstAttribute="top" secondItem="oWN-K8-IIN" secondAttribute="top" constant="6" id="ZpB-7l-p7g"/>
+                                            <constraint firstItem="LTQ-j5-p9c" firstAttribute="top" secondItem="oWN-K8-IIN" secondAttribute="top" constant="11" id="ukp-9f-OfL"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -262,7 +261,9 @@
         <class className="BrewMethodDetailViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BrewMethodDetailViewController.h"/>
             <relationships>
-                <relationship kind="action" name="unitsChanged:" candidateClass="UISegmentedControl"/>
+                <relationship kind="action" name="coffeeUnitChanged"/>
+                <relationship kind="action" name="tempUnitChanged"/>
+                <relationship kind="action" name="waterUnitChanged"/>
                 <relationship kind="outlet" name="coffeeAmountInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="coffeeUnits" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="grindSizeLabel" candidateClass="UILabel"/>
