@@ -25,6 +25,4 @@
 -(IBAction)waterUnitChanged;
 -(IBAction)tempUnitChanged;
 
--(void)setAmount:(UITextField *) field amount:(double) amount;
-
 @end

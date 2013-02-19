@@ -93,12 +93,15 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cZc-kw-UJX">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cZc-kw-UJX">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="110" type="user" id="Mif-lA-6xY"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="gz9-HF-67X" id="Dgd-1c-bWk"/>
+                                                    </connections>
                                                 </textField>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="z61-Ry-dfH">
                                                     <constraints>
@@ -138,12 +141,15 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pAY-j1-GBU">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pAY-j1-GBU">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="110" type="user" id="pUs-tc-Nat"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="gz9-HF-67X" id="1jt-9b-Gok"/>
+                                                    </connections>
                                                 </textField>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QV4-Lz-1LI">
                                                     <constraints>
@@ -163,10 +169,10 @@
                                         <constraints>
                                             <constraint firstItem="6u2-gt-8W1" firstAttribute="leading" secondItem="b5I-WX-59c" secondAttribute="leading" constant="10" id="6Tx-Bh-ujI"/>
                                             <constraint firstItem="QV4-Lz-1LI" firstAttribute="baseline" secondItem="6u2-gt-8W1" secondAttribute="baseline" type="default" id="Caq-qK-A7l"/>
+                                            <constraint firstItem="6u2-gt-8W1" firstAttribute="top" secondItem="b5I-WX-59c" secondAttribute="top" constant="11" id="DMo-kM-Tov"/>
+                                            <constraint firstItem="QV4-Lz-1LI" firstAttribute="top" secondItem="b5I-WX-59c" secondAttribute="top" constant="6" id="Hvb-bU-Ddc"/>
                                             <constraint firstItem="pAY-j1-GBU" firstAttribute="leading" secondItem="b5I-WX-59c" secondAttribute="leading" constant="120" id="JdL-bu-o0u"/>
-                                            <constraint firstItem="QV4-Lz-1LI" firstAttribute="top" secondItem="pAY-j1-GBU" secondAttribute="top" type="default" id="UgK-U7-ArV"/>
                                             <constraint firstItem="pAY-j1-GBU" firstAttribute="centerY" secondItem="b5I-WX-59c" secondAttribute="centerY" type="default" id="VsY-UI-NDc"/>
-                                            <constraint firstItem="6u2-gt-8W1" firstAttribute="centerY" secondItem="QV4-Lz-1LI" secondAttribute="centerY" type="default" id="b9q-RM-UQc"/>
                                             <constraint firstAttribute="trailing" secondItem="QV4-Lz-1LI" secondAttribute="trailing" constant="5" id="wuH-hL-9MY"/>
                                         </constraints>
                                     </tableViewCell>
@@ -182,12 +188,15 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sxy-BC-Ics">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Sxy-BC-Ics">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="110" type="user" id="0Qx-XV-fvT"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="gz9-HF-67X" id="vCD-58-p7e"/>
+                                                    </connections>
                                                 </textField>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="enA-6S-YOF">
                                                     <constraints>

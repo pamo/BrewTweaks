@@ -52,8 +52,24 @@
     // Do any additional setup after loading the view, typically from a nib.
     [self configureView];
 }
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {;
+
     if ((textField == self.waterAmountInput) || (textField == self.coffeeAmountInput) || (textField == self.tempInput)) {
+        [textField resignFirstResponder];
+    }
+    return YES;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
+    NSLog(@"textFieldShouldEndEditing %@", textField.text);
+    if(textField == self.waterAmountInput){
+        self.brewMethod.waterAmount = textField.text.doubleValue;
+        [textField resignFirstResponder];
+    } else if (textField == self.coffeeAmountInput){
+        self.brewMethod.coffeeAmount = textField.text.doubleValue;
+        [textField resignFirstResponder];
+    } else if (textField == self.tempInput){
+        self.brewMethod.temp = textField.text.doubleValue;
         [textField resignFirstResponder];
     }
     return YES;
@@ -103,8 +119,11 @@
     }
     self.tempInput.text = [NSString stringWithFormat:@"%.2lf", self.brewMethod.temp];
 }
--(void)setAmount:(UITextField *) field amount:(double) amount{
-    
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    NSLog(@"touchesBegan:withEvent:");
+    [self.waterAmountInput endEditing:YES];
+    [self.coffeeAmountInput endEditing:YES];
+    [self.tempInput endEditing:YES];
+    [super touchesBegan:touches withEvent:event];
 }
-
 @end
