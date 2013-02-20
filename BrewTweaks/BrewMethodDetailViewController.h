@@ -24,5 +24,5 @@
 -(IBAction)coffeeUnitChanged;
 -(IBAction)waterUnitChanged;
 -(IBAction)tempUnitChanged;
-
+-(IBAction)valueChanged:(UITextField *) textField;
 @end

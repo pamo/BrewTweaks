@@ -30,7 +30,7 @@
 {
     // Update the user interface for the detail item.
     BrewMethod *theBrewMethod = self.brewMethod;
-    
+    self.navigationItem.backBarButtonItem.title = @"Back";
     if (theBrewMethod) {
         
         theBrewMethod.waterUnit = self.waterUnits.selectedSegmentIndex;
@@ -59,20 +59,32 @@
     }
     return YES;
 }
-
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    if(textField==self.waterAmountInput || textField==self.coffeeAmountInput || textField == self.tempInput){
+        [self valueChanged:textField];
+        [textField isFirstResponder];
+    }
+    return YES;
+}
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
     NSLog(@"textFieldShouldEndEditing %@", textField.text);
-    if(textField == self.waterAmountInput){
-        self.brewMethod.waterAmount = textField.text.doubleValue;
-        [textField resignFirstResponder];
-    } else if (textField == self.coffeeAmountInput){
-        self.brewMethod.coffeeAmount = textField.text.doubleValue;
-        [textField resignFirstResponder];
-    } else if (textField == self.tempInput){
-        self.brewMethod.temp = textField.text.doubleValue;
+    if(textField==self.waterAmountInput || textField==self.coffeeAmountInput || textField == self.tempInput){
+        [self valueChanged:textField];
         [textField resignFirstResponder];
     }
     return YES;
+}
+-(IBAction)valueChanged:(UITextField *)textField{
+    NSLog(@"Value changed to %@", textField.text);
+    if(textField == self.waterAmountInput){
+        self.brewMethod.waterAmount = textField.text.doubleValue;
+        
+    } else if (textField == self.coffeeAmountInput){
+        self.brewMethod.coffeeAmount = textField.text.doubleValue;
+        
+    } else if (textField == self.tempInput){
+        self.brewMethod.temp = textField.text.doubleValue;
+    }
 }
 -(IBAction)coffeeUnitChanged{
     switch (self.coffeeUnits.selectedSegmentIndex) {
@@ -108,11 +120,11 @@
     switch (self.tempUnits.selectedSegmentIndex) {
         case 0:
             NSLog(@"Temperature is in Fahrenheit");
-            self.brewMethod.temp = (self.brewMethod.temp-32)/1.8;
+            self.brewMethod.temp = (self.brewMethod.temp*1.8)+32;
             break;
         case 1:
             NSLog(@"Temperature is in Celsius");
-            self.brewMethod.temp = (self.brewMethod.temp*1.8)+32;
+            self.brewMethod.temp = (self.brewMethod.temp-32)/1.8;
             break;
         default:
             break;

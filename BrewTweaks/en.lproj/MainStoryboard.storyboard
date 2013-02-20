@@ -93,13 +93,14 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cZc-kw-UJX">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cZc-kw-UJX">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="110" type="user" id="Mif-lA-6xY"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
+                                                        <action selector="valueChanged:" destination="gz9-HF-67X" eventType="valueChanged" id="Uvc-yc-6o8"/>
                                                         <outlet property="delegate" destination="gz9-HF-67X" id="Dgd-1c-bWk"/>
                                                     </connections>
                                                 </textField>
@@ -141,13 +142,14 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pAY-j1-GBU">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pAY-j1-GBU">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="110" type="user" id="pUs-tc-Nat"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <connections>
+                                                        <action selector="valueChanged:" destination="gz9-HF-67X" eventType="valueChanged" id="Eeb-zR-fOC"/>
                                                         <outlet property="delegate" destination="gz9-HF-67X" id="1jt-9b-Gok"/>
                                                     </connections>
                                                 </textField>
@@ -188,13 +190,14 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Sxy-BC-Ics">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Sxy-BC-Ics">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="110" type="user" id="0Qx-XV-fvT"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <connections>
+                                                        <action selector="valueChanged:" destination="gz9-HF-67X" eventType="valueChanged" id="uRt-4q-4uf"/>
                                                         <outlet property="delegate" destination="gz9-HF-67X" id="vCD-58-p7e"/>
                                                     </connections>
                                                 </textField>
@@ -232,8 +235,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="i0E-vC-Y6x">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="D00-I1-SxV"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="BPy-cF-Q6I"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="fQU-Ii-yaD"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
@@ -272,6 +274,7 @@
             <relationships>
                 <relationship kind="action" name="coffeeUnitChanged"/>
                 <relationship kind="action" name="tempUnitChanged"/>
+                <relationship kind="action" name="valueChanged:" candidateClass="UITextField"/>
                 <relationship kind="action" name="waterUnitChanged"/>
                 <relationship kind="outlet" name="coffeeAmountInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="coffeeUnits" candidateClass="UISegmentedControl"/>
