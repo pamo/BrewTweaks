@@ -8,6 +8,8 @@
 
 #import "BrewMethodDetailViewController.h"
 #import "BrewMethod.h"
+#include <math.h>
+
 @interface BrewMethodDetailViewController ()
 - (void)configureView;
 @end
@@ -39,9 +41,9 @@
 
         self.navigationItem.title = theBrewMethod.name;
         self.grindSizeLabel.text = theBrewMethod.grind;
-        self.waterAmountInput.text = [NSString stringWithFormat:@"%.2lf", theBrewMethod.waterAmount];
-        self.coffeeAmountInput.text = [NSString stringWithFormat:@"%.2lf", theBrewMethod.coffeeAmount];
-        self.tempInput.text = [NSString stringWithFormat:@"%.2lf", theBrewMethod.temp];
+        self.waterAmountInput.text = [NSString stringWithFormat:@"%.0lf", theBrewMethod.waterAmount];
+        self.coffeeAmountInput.text = [NSString stringWithFormat:@"%.0lf", theBrewMethod.coffeeAmount];
+        self.tempInput.text = [NSString stringWithFormat:@"%.0lf", theBrewMethod.temp];
 
     }
 }
@@ -67,7 +69,7 @@
     return YES;
 }
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
-    NSLog(@"textFieldShouldEndEditing %@", textField.text);
+    //NSLog(@"textFieldShouldEndEditing %@", textField.text);
     if(textField==self.waterAmountInput || textField==self.coffeeAmountInput || textField == self.tempInput){
         [self valueChanged:textField];
         [textField resignFirstResponder];
@@ -75,7 +77,7 @@
     return YES;
 }
 -(IBAction)valueChanged:(UITextField *)textField{
-    NSLog(@"Value changed to %@", textField.text);
+    //NSLog(@"Value changed to %@", textField.text);
     if(textField == self.waterAmountInput){
         self.brewMethod.waterAmount = textField.text.doubleValue;
         
@@ -91,30 +93,39 @@
         case 0:
             NSLog(@"Coffee units are in grams");
             self.brewMethod.coffeeAmount = self.brewMethod.coffeeAmount*28.0;
+            // round to nearest 10th gram
+            self.brewMethod.coffeeAmount = round(self.brewMethod.coffeeAmount*10.0)/10.0;
+            self.coffeeAmountInput.text = [NSString stringWithFormat:@"%.0lf", self.brewMethod.coffeeAmount];
             break;
         case 1:
             NSLog(@"Coffee units are in ounces");
             self.brewMethod.coffeeAmount = self.brewMethod.coffeeAmount/28.0;
+            self.coffeeAmountInput.text = [NSString stringWithFormat:@"%.2lf", self.brewMethod.coffeeAmount];
             break;
         default:
+            self.coffeeAmountInput.text = [NSString stringWithFormat:@"%.2lf", self.brewMethod.coffeeAmount];
             break;
     }
-    self.coffeeAmountInput.text = [NSString stringWithFormat:@"%.2lf", self.brewMethod.coffeeAmount];
+    
 }
 -(IBAction)waterUnitChanged{
     switch (self.waterUnits.selectedSegmentIndex) {
         case 0:
             NSLog(@"Water units are in grams");
             self.brewMethod.waterAmount = self.brewMethod.waterAmount*28.0;
+            // round to nearest 10th gram
+            self.brewMethod.waterAmount = round(self.brewMethod.waterAmount*10.0)/10.0;
+            self.waterAmountInput.text = [NSString stringWithFormat:@"%.0lf", self.brewMethod.waterAmount];
             break;
         case 1:
             NSLog(@"Water units are in ounces");
             self.brewMethod.waterAmount = self.brewMethod.waterAmount/28.0;
+            self.waterAmountInput.text = [NSString stringWithFormat:@"%.2lf", self.brewMethod.waterAmount];
             break;
         default:
+            self.waterAmountInput.text = [NSString stringWithFormat:@"%.2lf", self.brewMethod.waterAmount];
             break;
     }
-    self.waterAmountInput.text = [NSString stringWithFormat:@"%.2lf", self.brewMethod.waterAmount];
 }
 -(IBAction)tempUnitChanged{
     switch (self.tempUnits.selectedSegmentIndex) {
@@ -129,7 +140,9 @@
         default:
             break;
     }
-    self.tempInput.text = [NSString stringWithFormat:@"%.2lf", self.brewMethod.temp];
+    // round to nearest 10th degree
+    self.brewMethod.temp = round(self.brewMethod.temp * 10.0)/10.0;
+    self.tempInput.text = [NSString stringWithFormat:@"%.0lf", self.brewMethod.temp];
 }
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     NSLog(@"touchesBegan:withEvent:");
