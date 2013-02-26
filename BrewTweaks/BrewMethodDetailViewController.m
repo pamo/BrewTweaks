@@ -46,13 +46,33 @@
         self.tempInput.text = [NSString stringWithFormat:@"%.0lf", theBrewMethod.temp];
 
     }
+    
+    DoneCancelNumberPadToolbar *waterDecimalToolbar = [[DoneCancelNumberPadToolbar alloc] initWithTextField:self.waterAmountInput withKeyboardType:UIKeyboardTypeDecimalPad];
+    self.waterAmountInput.inputAccessoryView = waterDecimalToolbar;
+    
+    DoneCancelNumberPadToolbar *coffeeDecimalToolbar = [[DoneCancelNumberPadToolbar alloc] initWithTextField:self.coffeeAmountInput withKeyboardType:UIKeyboardTypeDecimalPad];
+    self.coffeeAmountInput.inputAccessoryView = coffeeDecimalToolbar;
+    
+    DoneCancelNumberPadToolbar *tempDecimalToolbar = [[DoneCancelNumberPadToolbar alloc] initWithTextField:self.tempInput withKeyboardType:UIKeyboardTypeDecimalPad];
+    self.tempInput.inputAccessoryView = tempDecimalToolbar;
+    waterDecimalToolbar.delegate = self;
+    coffeeDecimalToolbar.delegate = self;
+    tempDecimalToolbar.delegate = self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+}
+-(void)doneCancelNumberPadToolbarDelegate:(DoneCancelNumberPadToolbar *)controller didClickDone:(UITextField *)textField
+{
+    NSLog(@"%@", textField.text);
+}
+
+-(void)doneCancelNumberPadToolbarDelegate:(DoneCancelNumberPadToolbar *)controller didClickCancel:(UITextField *)textField
+{
+    NSLog(@"Canceled: %@", [textField description]);
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {;
 
@@ -91,14 +111,14 @@
 -(IBAction)coffeeUnitChanged{
     switch (self.coffeeUnits.selectedSegmentIndex) {
         case 0:
-            NSLog(@"Coffee units are in grams");
+            //NSLog(@"Coffee units are in grams");
             self.brewMethod.coffeeAmount = self.brewMethod.coffeeAmount*28.0;
             // round to nearest 10th gram
             self.brewMethod.coffeeAmount = round(self.brewMethod.coffeeAmount*10.0)/10.0;
             self.coffeeAmountInput.text = [NSString stringWithFormat:@"%.0lf", self.brewMethod.coffeeAmount];
             break;
         case 1:
-            NSLog(@"Coffee units are in ounces");
+            //NSLog(@"Coffee units are in ounces");
             self.brewMethod.coffeeAmount = self.brewMethod.coffeeAmount/28.0;
             self.coffeeAmountInput.text = [NSString stringWithFormat:@"%.2lf", self.brewMethod.coffeeAmount];
             break;
@@ -111,14 +131,14 @@
 -(IBAction)waterUnitChanged{
     switch (self.waterUnits.selectedSegmentIndex) {
         case 0:
-            NSLog(@"Water units are in grams");
+            //NSLog(@"Water units are in grams");
             self.brewMethod.waterAmount = self.brewMethod.waterAmount*28.0;
             // round to nearest 10th gram
             self.brewMethod.waterAmount = round(self.brewMethod.waterAmount*10.0)/10.0;
             self.waterAmountInput.text = [NSString stringWithFormat:@"%.0lf", self.brewMethod.waterAmount];
             break;
         case 1:
-            NSLog(@"Water units are in ounces");
+            //NSLog(@"Water units are in ounces");
             self.brewMethod.waterAmount = self.brewMethod.waterAmount/28.0;
             self.waterAmountInput.text = [NSString stringWithFormat:@"%.2lf", self.brewMethod.waterAmount];
             break;
@@ -130,11 +150,11 @@
 -(IBAction)tempUnitChanged{
     switch (self.tempUnits.selectedSegmentIndex) {
         case 0:
-            NSLog(@"Temperature is in Fahrenheit");
+            //NSLog(@"Temperature is in Fahrenheit");
             self.brewMethod.temp = (self.brewMethod.temp*1.8)+32;
             break;
         case 1:
-            NSLog(@"Temperature is in Celsius");
+            //NSLog(@"Temperature is in Celsius");
             self.brewMethod.temp = (self.brewMethod.temp-32)/1.8;
             break;
         default:

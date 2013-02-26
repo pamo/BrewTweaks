@@ -21,6 +21,7 @@
 		1C6DA4AA16D13E7900DC1282 /* BrewMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6DA4A916D13E7900DC1282 /* BrewMethod.m */; };
 		1C6DA4AD16D161FF00DC1282 /* BrewMethodDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6DA4AC16D161FF00DC1282 /* BrewMethodDataController.m */; };
 		1C6DA4CA16D1B19500DC1282 /* BrewMethodDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6DA4C916D1B19500DC1282 /* BrewMethodDetailViewController.m */; };
+		1C8A69AB16DC145800C0ED92 /* DoneCancelNumberPadToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8A69AA16DC145800C0ED92 /* DoneCancelNumberPadToolbar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		1C6DA4AC16D161FF00DC1282 /* BrewMethodDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrewMethodDataController.m; sourceTree = "<group>"; };
 		1C6DA4C816D1B19500DC1282 /* BrewMethodDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrewMethodDetailViewController.h; sourceTree = "<group>"; };
 		1C6DA4C916D1B19500DC1282 /* BrewMethodDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrewMethodDetailViewController.m; sourceTree = "<group>"; };
+		1C8A69A916DC145800C0ED92 /* DoneCancelNumberPadToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoneCancelNumberPadToolbar.h; sourceTree = "<group>"; };
+		1C8A69AA16DC145800C0ED92 /* DoneCancelNumberPadToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoneCancelNumberPadToolbar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,8 @@
 				1C6DA4A516D04EFF00DC1282 /* MainTableViewController.h */,
 				1C6DA4A616D04EFF00DC1282 /* MainTableViewController.m */,
 				1C6DA4C816D1B19500DC1282 /* BrewMethodDetailViewController.h */,
+				1C8A69A916DC145800C0ED92 /* DoneCancelNumberPadToolbar.h */,
+				1C8A69AA16DC145800C0ED92 /* DoneCancelNumberPadToolbar.m */,
 				1C6DA4C916D1B19500DC1282 /* BrewMethodDetailViewController.m */,
 				1C6DA48916D048DB00DC1282 /* Supporting Files */,
 				1C6DA4A816D13E7900DC1282 /* BrewMethod.h */,
@@ -195,6 +200,7 @@
 				1C6DA4AA16D13E7900DC1282 /* BrewMethod.m in Sources */,
 				1C6DA4AD16D161FF00DC1282 /* BrewMethodDataController.m in Sources */,
 				1C6DA4CA16D1B19500DC1282 /* BrewMethodDetailViewController.m in Sources */,
+				1C8A69AB16DC145800C0ED92 /* DoneCancelNumberPadToolbar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

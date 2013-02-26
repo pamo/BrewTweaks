@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DoneCancelNumberPadToolbar.h"
+
 @class BrewMethod;
-@interface BrewMethodDetailViewController : UITableViewController <UITextFieldDelegate>
+@interface BrewMethodDetailViewController : UITableViewController <DoneCancelNumberPadToolbarDelegate>
 
 
 @property (strong, nonatomic) BrewMethod *brewMethod;
