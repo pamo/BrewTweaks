@@ -55,10 +55,12 @@
     
     DoneCancelNumberPadToolbar *tempDecimalToolbar = [[DoneCancelNumberPadToolbar alloc] initWithTextField:self.tempInput withKeyboardType:UIKeyboardTypeDecimalPad];
     self.tempInput.inputAccessoryView = tempDecimalToolbar;
+   
     waterDecimalToolbar.delegate = self;
     coffeeDecimalToolbar.delegate = self;
     tempDecimalToolbar.delegate = self;
 }
+
 
 - (void)viewDidLoad
 {
@@ -67,12 +69,13 @@
 }
 -(void)doneCancelNumberPadToolbarDelegate:(DoneCancelNumberPadToolbar *)controller didClickDone:(UITextField *)textField
 {
-    NSLog(@"%@", textField.text);
+    //NSLog(@"%@", textField.text);
 }
 
 -(void)doneCancelNumberPadToolbarDelegate:(DoneCancelNumberPadToolbar *)controller didClickCancel:(UITextField *)textField
 {
-    NSLog(@"Canceled: %@", [textField description]);
+
+    //NSLog(@"Old Text: %@, Canceled: %@", textField.text, [textField description]);
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {;
 

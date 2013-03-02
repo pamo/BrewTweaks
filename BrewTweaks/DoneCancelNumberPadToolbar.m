@@ -24,10 +24,10 @@
         [textField setKeyboardType:keyboardType];
         self.barStyle = UIBarStyleBlackTranslucent;
         self.items = [NSArray arrayWithObjects:
-                      [[UIBarButtonItem alloc]initWithTitle:@"Cancel"
+                     /* [[UIBarButtonItem alloc]initWithTitle:@"Cancel"
                                                       style:UIBarButtonItemStyleBordered
                                                      target:self
-                                                     action:@selector(cancelNumberPad)],
+                                                     action:@selector(cancelNumberPad)],*/
                       [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
                                                                    target:nil action:nil],
                       [[UIBarButtonItem alloc]initWithTitle:@"Done"
