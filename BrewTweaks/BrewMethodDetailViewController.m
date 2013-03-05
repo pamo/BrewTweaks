@@ -59,6 +59,8 @@
     waterDecimalToolbar.delegate = self;
     coffeeDecimalToolbar.delegate = self;
     tempDecimalToolbar.delegate = self;
+    
+self.grindTypes = [NSMutableArray arrayWithObjects: @"Coarse", @"Medium-Coarse", @"Medium",  @"Medium-Fine", @"Fine", nil];
 }
 
 
@@ -92,15 +94,22 @@
     return YES;
 }
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
-    //NSLog(@"textFieldShouldEndEditing %@", textField.text);
+    NSLog(@"textFieldShouldEndEditing %@", textField.text);
     if(textField==self.waterAmountInput || textField==self.coffeeAmountInput || textField == self.tempInput){
         [self valueChanged:textField];
         [textField resignFirstResponder];
     }
     return YES;
 }
+-(BOOL)textFieldShouldClear:(UITextField *)textField{
+    if(textField==self.waterAmountInput || textField==self.coffeeAmountInput || textField == self.tempInput){
+        [self valueChanged:textField];
+        [textField resignFirstResponder];
+    }
+return YES;
+}
 -(IBAction)valueChanged:(UITextField *)textField{
-    //NSLog(@"Value changed to %@", textField.text);
+    NSLog(@"Value changed to %@", textField.text);
     if(textField == self.waterAmountInput){
         self.brewMethod.waterAmount = textField.text.doubleValue;
         
@@ -112,16 +121,19 @@
     }
 }
 -(IBAction)coffeeUnitChanged{
+    // Get the current input value
+    self.brewMethod.coffeeAmount = self.coffeeAmountInput.text.doubleValue;
+    
     switch (self.coffeeUnits.selectedSegmentIndex) {
         case 0:
-            //NSLog(@"Coffee units are in grams");
+            // Convert to grams
             self.brewMethod.coffeeAmount = self.brewMethod.coffeeAmount*28.0;
-            // round to nearest 10th gram
             self.brewMethod.coffeeAmount = round(self.brewMethod.coffeeAmount*10.0)/10.0;
+
             self.coffeeAmountInput.text = [NSString stringWithFormat:@"%.0lf", self.brewMethod.coffeeAmount];
             break;
         case 1:
-            //NSLog(@"Coffee units are in ounces");
+            // Convert to ounces
             self.brewMethod.coffeeAmount = self.brewMethod.coffeeAmount/28.0;
             self.coffeeAmountInput.text = [NSString stringWithFormat:@"%.2lf", self.brewMethod.coffeeAmount];
             break;
@@ -132,16 +144,14 @@
     
 }
 -(IBAction)waterUnitChanged{
+    self.brewMethod.waterAmount = self.waterAmountInput.text.doubleValue;
     switch (self.waterUnits.selectedSegmentIndex) {
         case 0:
-            //NSLog(@"Water units are in grams");
             self.brewMethod.waterAmount = self.brewMethod.waterAmount*28.0;
-            // round to nearest 10th gram
             self.brewMethod.waterAmount = round(self.brewMethod.waterAmount*10.0)/10.0;
             self.waterAmountInput.text = [NSString stringWithFormat:@"%.0lf", self.brewMethod.waterAmount];
             break;
         case 1:
-            //NSLog(@"Water units are in ounces");
             self.brewMethod.waterAmount = self.brewMethod.waterAmount/28.0;
             self.waterAmountInput.text = [NSString stringWithFormat:@"%.2lf", self.brewMethod.waterAmount];
             break;
@@ -151,14 +161,15 @@
     }
 }
 -(IBAction)tempUnitChanged{
+    self.brewMethod.temp = self.tempInput.text.doubleValue;
     switch (self.tempUnits.selectedSegmentIndex) {
         case 0:
-            //NSLog(@"Temperature is in Fahrenheit");
-            self.brewMethod.temp = (self.brewMethod.temp*1.8)+32;
+            // Convert to Fahrenheit
+            self.brewMethod.temp = (self.tempInput.text.doubleValue*1.8)+32;
             break;
         case 1:
-            //NSLog(@"Temperature is in Celsius");
-            self.brewMethod.temp = (self.brewMethod.temp-32)/1.8;
+            // Convert to Celsius
+            self.brewMethod.temp = (self.tempInput.text.doubleValue-32)/1.8;
             break;
         default:
             break;
@@ -174,4 +185,5 @@
     [self.tempInput endEditing:YES];
     [super touchesBegan:touches withEvent:event];
 }
+
 @end
