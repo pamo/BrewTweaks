@@ -67,10 +67,16 @@
         ratioDecimalToolbar.delegate = self;
 
     }
-    
+    [self resetBooleans];
     
 }
+-(void) resetBooleans{
+    self.coffeeChanged = false;
+    self.waterChanged = false;
+    self.ratioChanged = false;
+}
 -(double)calculateRatio:(double) water coffee:(double) coffee units:(int)units{
+    NSLog(@"Gimme ratio");
     switch (units) {
         case 0:
             water = water/28.0;
@@ -80,11 +86,12 @@
     }
     self.brewMethod.ratio = coffee/water;
     self.ratioInput.text = [NSString stringWithFormat:@"%.2lf", self.brewMethod.ratio];
-
+    //[self resetBooleans];
     return self.brewMethod.ratio;
     
 }
 -(double)calculateWater:(double)coffee ratio:(double) ratio{
+    NSLog(@"Gimme water");
     if (self.coffeeUnits.selectedSegmentIndex == 0) {
         coffee = coffee*28.0;
     }
@@ -98,11 +105,12 @@
         self.brewMethod.waterAmount = self.brewMethod.waterAmount*28.0;
         self.waterAmountInput.text = [NSString stringWithFormat:@"%.0lf", self.brewMethod.waterAmount];
     }
-    
+    //[self resetBooleans];
     return self.brewMethod.waterAmount;
 }
 
 -(double)calculateCoffee:(double)water ratio:(double) ratio{
+    NSLog(@"Gimme coffee!");    
     if (self.waterUnits.selectedSegmentIndex == 0) {
         water = water/28.0;
     }
@@ -115,7 +123,7 @@
         self.brewMethod.coffeeAmount = self.brewMethod.coffeeAmount/28.0;
         self.coffeeAmountInput.text = [NSString stringWithFormat:@"%.2lf", self.brewMethod.coffeeAmount];
     }
-    
+    //[self resetBooleans];
     return self.brewMethod.coffeeAmount;
 }
 
@@ -137,19 +145,20 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {;
 
     if ((textField == self.waterAmountInput) || (textField == self.coffeeAmountInput) || (textField == self.tempInput)) {
+        [self valueChanged:textField];
         [textField resignFirstResponder];
     }
     return YES;
 }
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
     if(textField==self.waterAmountInput || textField==self.coffeeAmountInput || textField == self.tempInput){
-        [self valueChanged:textField];
+        //[self valueChanged:textField];
         [textField isFirstResponder];
     }
     return YES;
 }
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
-    NSLog(@"textFieldShouldEndEditing %@", textField.text);
+    //NSLog(@"textFieldShouldEndEditing %@", textField.text);
     if(textField==self.waterAmountInput || textField==self.coffeeAmountInput || textField == self.tempInput){
         [self valueChanged:textField];
         [textField resignFirstResponder];
@@ -164,7 +173,8 @@
 return YES;
 }
 -(IBAction)valueChanged:(UITextField *)textField{
-    NSLog(@"%@ changed to %@", textField, textField.text);
+    NSLog(@"Value Changed: Water %d Coffee %d Ratio %d", self.waterChanged, self.coffeeChanged, self.ratioChanged);
+    //NSLog(@"%@ changed to %@", textField, textField.text);
     if(textField == self.waterAmountInput){
         self.brewMethod.waterAmount = textField.text.doubleValue;
         self.waterChanged = true;
@@ -182,11 +192,18 @@ return YES;
     
     if (self.coffeeChanged && self.ratioChanged) {
         [self calculateWater:self.brewMethod.coffeeAmount ratio:self.brewMethod.ratio];
+        self.coffeeChanged = false;
+        self.ratioChanged = false;
     } else if (self.coffeeChanged && self.waterChanged){
         [self calculateRatio:self.brewMethod.waterAmount coffee:self.brewMethod.coffeeAmount units:self.waterUnits.selectedSegmentIndex];
+        self.coffeeChanged = false;
+        self.waterChanged = false;
     } else if (self.waterChanged && self.ratioChanged){
         [self calculateCoffee:self.brewMethod.waterAmount ratio:self.brewMethod.ratio];
+        self.waterChanged = false;
+        self.ratioChanged = false;
     }
+    NSLog(@"Calc Done: Water %d Coffee %d Ratio %d", self.waterChanged, self.coffeeChanged, self.ratioChanged);
 }
 -(IBAction)coffeeUnitChanged{
     // Get the current input value
@@ -210,7 +227,7 @@ return YES;
             break;
     }
     
-    [self calculateRatio:self.brewMethod.waterAmount coffee:self.brewMethod.coffeeAmount units:self.waterUnits.selectedSegmentIndex];
+    // [self calculateRatio:self.brewMethod.waterAmount coffee:self.brewMethod.coffeeAmount units:self.waterUnits.selectedSegmentIndex];
     
 }
 -(IBAction)waterUnitChanged{
@@ -230,7 +247,7 @@ return YES;
             break;
     }
     
-    [self calculateRatio:self.brewMethod.waterAmount coffee:self.brewMethod.coffeeAmount units:self.waterUnits.selectedSegmentIndex];
+    // [self calculateRatio:self.brewMethod.waterAmount coffee:self.brewMethod.coffeeAmount units:self.waterUnits.selectedSegmentIndex];
 }
 -(IBAction)tempUnitChanged{
     self.brewMethod.temp = self.tempInput.text.doubleValue;
