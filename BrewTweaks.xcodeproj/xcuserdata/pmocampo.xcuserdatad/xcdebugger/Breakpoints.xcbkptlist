@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BrewTweaks/BrewMethodDetailViewController.m"
-         timestampString = "383519605.166889"
+         timestampString = "384226610.532793"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "45"
-         endingLineNumber = "45"
+         startingLineNumber = "47"
+         endingLineNumber = "47"
          landmarkName = "-configureView"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,12 +34,38 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BrewTweaks/BrewMethodDetailViewController.m"
-         timestampString = "384188134.069772"
+         timestampString = "384229953.111489"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "129"
-         endingLineNumber = "129"
+         startingLineNumber = "156"
+         endingLineNumber = "156"
          landmarkName = "-coffeeUnitChanged"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "BrewTweaks/BrewMethodDetailViewController.m"
+         timestampString = "384229953.111489"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "241"
+         endingLineNumber = "241"
+         landmarkName = "-grindTypeWasSelected:element:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "BrewTweaks/BrewMethodDetailViewController.m"
+         timestampString = "384229953.111489"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "244"
+         endingLineNumber = "244"
+         landmarkName = "-grindTypeWasSelected:element:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

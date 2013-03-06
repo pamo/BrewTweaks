@@ -17,6 +17,7 @@
         _coffeeAmount = coffeeAmount;
         _waterAmount = waterAmount;
         _temp = temp;
+        _ratio = 0;
         return self;
     }
     return nil;

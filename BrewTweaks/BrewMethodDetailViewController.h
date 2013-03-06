@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *waterAmountInput;
 @property (weak, nonatomic) IBOutlet UITextField *coffeeAmountInput;
 @property (weak, nonatomic) IBOutlet UITextField *tempInput;
+@property (weak, nonatomic) IBOutlet UITextField *ratioInput;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *waterUnits;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *coffeeUnits;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *tempUnits;

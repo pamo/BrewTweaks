@@ -33,6 +33,8 @@
     // Update the user interface for the detail item.
     BrewMethod *theBrewMethod = self.brewMethod;
     self.navigationItem.backBarButtonItem.title = @"Back";
+    self.grindTypes = [NSMutableArray arrayWithObjects: @"Coarse", @"Medium-Coarse", @"Medium",  @"Medium-Fine", @"Fine", nil];
+    
     if (theBrewMethod) {
         
         theBrewMethod.waterUnit = self.waterUnits.selectedSegmentIndex;
@@ -44,23 +46,43 @@
         self.waterAmountInput.text = [NSString stringWithFormat:@"%.0lf", theBrewMethod.waterAmount];
         self.coffeeAmountInput.text = [NSString stringWithFormat:@"%.0lf", theBrewMethod.coffeeAmount];
         self.tempInput.text = [NSString stringWithFormat:@"%.0lf", theBrewMethod.temp];
+        
+        self.ratioInput.text = [NSString stringWithFormat:@"%.2lf", [self calculateRatio:theBrewMethod.waterAmount coffee:theBrewMethod.coffeeAmount units:0]];
+        
+        DoneCancelNumberPadToolbar *waterDecimalToolbar = [[DoneCancelNumberPadToolbar alloc] initWithTextField:self.waterAmountInput withKeyboardType:UIKeyboardTypeDecimalPad];
+        self.waterAmountInput.inputAccessoryView = waterDecimalToolbar;
+        
+        DoneCancelNumberPadToolbar *coffeeDecimalToolbar = [[DoneCancelNumberPadToolbar alloc] initWithTextField:self.coffeeAmountInput withKeyboardType:UIKeyboardTypeDecimalPad];
+        self.coffeeAmountInput.inputAccessoryView = coffeeDecimalToolbar;
+        
+        DoneCancelNumberPadToolbar *tempDecimalToolbar = [[DoneCancelNumberPadToolbar alloc] initWithTextField:self.tempInput withKeyboardType:UIKeyboardTypeDecimalPad];
+        self.tempInput.inputAccessoryView = tempDecimalToolbar;
+        
+        DoneCancelNumberPadToolbar *ratioDecimalToolbar = [[DoneCancelNumberPadToolbar alloc] initWithTextField:self.ratioInput withKeyboardType:UIKeyboardTypeDecimalPad];
+        self.ratioInput.inputAccessoryView = ratioDecimalToolbar;
+        
+        waterDecimalToolbar.delegate = self;
+        coffeeDecimalToolbar.delegate = self;
+        tempDecimalToolbar.delegate = self;
+        ratioDecimalToolbar.delegate = self;
 
     }
     
-    DoneCancelNumberPadToolbar *waterDecimalToolbar = [[DoneCancelNumberPadToolbar alloc] initWithTextField:self.waterAmountInput withKeyboardType:UIKeyboardTypeDecimalPad];
-    self.waterAmountInput.inputAccessoryView = waterDecimalToolbar;
     
-    DoneCancelNumberPadToolbar *coffeeDecimalToolbar = [[DoneCancelNumberPadToolbar alloc] initWithTextField:self.coffeeAmountInput withKeyboardType:UIKeyboardTypeDecimalPad];
-    self.coffeeAmountInput.inputAccessoryView = coffeeDecimalToolbar;
+}
+-(double)calculateRatio:(double) water coffee:(double) coffee units:(int)units{
+    switch (units) {
+        case 0:
+            water = water/28.0;
+            break;
+        default:
+            break;
+    }
+    self.brewMethod.ratio = coffee/water;
+    self.ratioInput.text = [NSString stringWithFormat:@"%.2lf", self.brewMethod.ratio];
+
+    return self.brewMethod.ratio;
     
-    DoneCancelNumberPadToolbar *tempDecimalToolbar = [[DoneCancelNumberPadToolbar alloc] initWithTextField:self.tempInput withKeyboardType:UIKeyboardTypeDecimalPad];
-    self.tempInput.inputAccessoryView = tempDecimalToolbar;
-   
-    waterDecimalToolbar.delegate = self;
-    coffeeDecimalToolbar.delegate = self;
-    tempDecimalToolbar.delegate = self;
-    
-self.grindTypes = [NSMutableArray arrayWithObjects: @"Coarse", @"Medium-Coarse", @"Medium",  @"Medium-Fine", @"Fine", nil];
 }
 
 
@@ -109,16 +131,19 @@ self.grindTypes = [NSMutableArray arrayWithObjects: @"Coarse", @"Medium-Coarse",
 return YES;
 }
 -(IBAction)valueChanged:(UITextField *)textField{
-    NSLog(@"Value changed to %@", textField.text);
+    NSLog(@"%@ changed to %@", textField, textField.text);
     if(textField == self.waterAmountInput){
         self.brewMethod.waterAmount = textField.text.doubleValue;
         
     } else if (textField == self.coffeeAmountInput){
         self.brewMethod.coffeeAmount = textField.text.doubleValue;
         
+        
     } else if (textField == self.tempInput){
         self.brewMethod.temp = textField.text.doubleValue;
     }
+    
+    [self calculateRatio:self.brewMethod.waterAmount coffee:self.brewMethod.coffeeAmount units:self.waterUnits.selectedSegmentIndex];
 }
 -(IBAction)coffeeUnitChanged{
     // Get the current input value
@@ -142,6 +167,8 @@ return YES;
             break;
     }
     
+    [self calculateRatio:self.brewMethod.waterAmount coffee:self.brewMethod.coffeeAmount units:self.waterUnits.selectedSegmentIndex];
+    
 }
 -(IBAction)waterUnitChanged{
     self.brewMethod.waterAmount = self.waterAmountInput.text.doubleValue;
@@ -159,6 +186,8 @@ return YES;
             self.waterAmountInput.text = [NSString stringWithFormat:@"%.2lf", self.brewMethod.waterAmount];
             break;
     }
+    
+    [self calculateRatio:self.brewMethod.waterAmount coffee:self.brewMethod.coffeeAmount units:self.waterUnits.selectedSegmentIndex];
 }
 -(IBAction)tempUnitChanged{
     self.brewMethod.temp = self.tempInput.text.doubleValue;
