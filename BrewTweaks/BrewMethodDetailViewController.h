@@ -25,6 +25,9 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *tempUnits;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 @property NSMutableArray *grindTypes;
+@property BOOL coffeeChanged;
+@property BOOL waterChanged;
+@property BOOL ratioChanged;
 
 -(IBAction)coffeeUnitChanged;
 -(IBAction)waterUnitChanged;

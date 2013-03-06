@@ -84,7 +84,40 @@
     return self.brewMethod.ratio;
     
 }
+-(double)calculateWater:(double)coffee ratio:(double) ratio{
+    if (self.coffeeUnits.selectedSegmentIndex == 0) {
+        coffee = coffee*28.0;
+    }
+    
+    // water is in ounces
+    self.brewMethod.waterAmount = coffee/ratio;
+    self.waterAmountInput.text = [NSString stringWithFormat:@"%.2lf", self.brewMethod.waterAmount];
+    
+    // If grams are selected, convert
+    if (self.waterUnits.selectedSegmentIndex == 0) {
+        self.brewMethod.waterAmount = self.brewMethod.waterAmount*28.0;
+        self.waterAmountInput.text = [NSString stringWithFormat:@"%.0lf", self.brewMethod.waterAmount];
+    }
+    
+    return self.brewMethod.waterAmount;
+}
 
+-(double)calculateCoffee:(double)water ratio:(double) ratio{
+    if (self.waterUnits.selectedSegmentIndex == 0) {
+        water = water/28.0;
+    }
+    // coffee is in grams 
+    self.brewMethod.coffeeAmount = water*ratio;
+    self.coffeeAmountInput.text = [NSString stringWithFormat:@"%.0lf", self.brewMethod.coffeeAmount];
+    
+    // If ounces are selected, convert
+    if (self.coffeeUnits.selectedSegmentIndex == 0) {
+        self.brewMethod.coffeeAmount = self.brewMethod.coffeeAmount/28.0;
+        self.coffeeAmountInput.text = [NSString stringWithFormat:@"%.2lf", self.brewMethod.coffeeAmount];
+    }
+    
+    return self.brewMethod.coffeeAmount;
+}
 
 - (void)viewDidLoad
 {
@@ -134,16 +167,26 @@ return YES;
     NSLog(@"%@ changed to %@", textField, textField.text);
     if(textField == self.waterAmountInput){
         self.brewMethod.waterAmount = textField.text.doubleValue;
+        self.waterChanged = true;
         
     } else if (textField == self.coffeeAmountInput){
         self.brewMethod.coffeeAmount = textField.text.doubleValue;
-        
+        self.coffeeChanged = true;
         
     } else if (textField == self.tempInput){
         self.brewMethod.temp = textField.text.doubleValue;
+    } else if (textField == self.ratioInput){
+        self.brewMethod.ratio = textField.text.doubleValue;
+        self.ratioChanged = true;
     }
     
-    [self calculateRatio:self.brewMethod.waterAmount coffee:self.brewMethod.coffeeAmount units:self.waterUnits.selectedSegmentIndex];
+    if (self.coffeeChanged && self.ratioChanged) {
+        [self calculateWater:self.brewMethod.coffeeAmount ratio:self.brewMethod.ratio];
+    } else if (self.coffeeChanged && self.waterChanged){
+        [self calculateRatio:self.brewMethod.waterAmount coffee:self.brewMethod.coffeeAmount units:self.waterUnits.selectedSegmentIndex];
+    } else if (self.waterChanged && self.ratioChanged){
+        [self calculateCoffee:self.brewMethod.waterAmount ratio:self.brewMethod.ratio];
+    }
 }
 -(IBAction)coffeeUnitChanged{
     // Get the current input value

@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BrewTweaks/BrewMethodDetailViewController.m"
-         timestampString = "384229953.111489"
+         timestampString = "384278476.300393"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "156"
-         endingLineNumber = "156"
+         startingLineNumber = "199"
+         endingLineNumber = "199"
          landmarkName = "-coffeeUnitChanged"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,26 +47,22 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BrewTweaks/BrewMethodDetailViewController.m"
-         timestampString = "384229953.111489"
+         timestampString = "384278476.300393"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "241"
-         endingLineNumber = "241"
-         landmarkName = "-grindTypeWasSelected:element:"
-         landmarkType = "5">
+         startingLineNumber = "284"
+         endingLineNumber = "284">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BrewTweaks/BrewMethodDetailViewController.m"
-         timestampString = "384229953.111489"
+         timestampString = "384278476.300393"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "244"
-         endingLineNumber = "244"
-         landmarkName = "-grindTypeWasSelected:element:"
-         landmarkType = "5">
+         startingLineNumber = "287"
+         endingLineNumber = "287">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>
