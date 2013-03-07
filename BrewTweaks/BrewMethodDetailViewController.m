@@ -71,6 +71,7 @@
     
 }
 -(void) resetBooleans{
+    NSLog(@"All booleans set to false");
     self.coffeeChanged = false;
     self.waterChanged = false;
     self.ratioChanged = false;
@@ -86,7 +87,7 @@
     }
     self.brewMethod.ratio = coffee/water;
     self.ratioInput.text = [NSString stringWithFormat:@"%.2lf", self.brewMethod.ratio];
-    //[self resetBooleans];
+    // [self resetBooleans];
     return self.brewMethod.ratio;
     
 }
@@ -144,14 +145,14 @@
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {;
 
-    if ((textField == self.waterAmountInput) || (textField == self.coffeeAmountInput) || (textField == self.tempInput)) {
-        [self valueChanged:textField];
+    if ((textField == self.waterAmountInput) || (textField == self.coffeeAmountInput) || (textField == self.tempInput || textField == self.ratioInput)) {
+        //[self valueChanged:textField];
         [textField resignFirstResponder];
     }
     return YES;
 }
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    if(textField==self.waterAmountInput || textField==self.coffeeAmountInput || textField == self.tempInput){
+    if(textField==self.waterAmountInput || textField==self.coffeeAmountInput || textField == self.tempInput || textField == self.ratioInput){
         //[self valueChanged:textField];
         [textField isFirstResponder];
     }
@@ -159,21 +160,21 @@
 }
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
     //NSLog(@"textFieldShouldEndEditing %@", textField.text);
-    if(textField==self.waterAmountInput || textField==self.coffeeAmountInput || textField == self.tempInput){
+    if(textField==self.waterAmountInput || textField==self.coffeeAmountInput || textField == self.tempInput || textField == self.ratioInput){
         [self valueChanged:textField];
         [textField resignFirstResponder];
     }
     return YES;
 }
 -(BOOL)textFieldShouldClear:(UITextField *)textField{
-    if(textField==self.waterAmountInput || textField==self.coffeeAmountInput || textField == self.tempInput){
+    if(textField==self.waterAmountInput || textField==self.coffeeAmountInput || textField == self.tempInput || textField == self.ratioInput){
         [self valueChanged:textField];
         [textField resignFirstResponder];
     }
 return YES;
 }
 -(IBAction)valueChanged:(UITextField *)textField{
-    NSLog(@"Value Changed: Water %d Coffee %d Ratio %d", self.waterChanged, self.coffeeChanged, self.ratioChanged);
+
     //NSLog(@"%@ changed to %@", textField, textField.text);
     if(textField == self.waterAmountInput){
         self.brewMethod.waterAmount = textField.text.doubleValue;
@@ -189,16 +190,16 @@ return YES;
         self.brewMethod.ratio = textField.text.doubleValue;
         self.ratioChanged = true;
     }
-    
-    if (self.coffeeChanged && self.ratioChanged) {
+    NSLog(@"%@ Changed: Water %d Coffee %d Ratio %d", textField.restorationIdentifier, self.waterChanged, self.coffeeChanged, self.ratioChanged);
+    if (self.coffeeChanged == true && self.ratioChanged == true) {
         [self calculateWater:self.brewMethod.coffeeAmount ratio:self.brewMethod.ratio];
         self.coffeeChanged = false;
         self.ratioChanged = false;
-    } else if (self.coffeeChanged && self.waterChanged){
+    } else if (self.coffeeChanged == true && self.waterChanged == true){
         [self calculateRatio:self.brewMethod.waterAmount coffee:self.brewMethod.coffeeAmount units:self.waterUnits.selectedSegmentIndex];
         self.coffeeChanged = false;
         self.waterChanged = false;
-    } else if (self.waterChanged && self.ratioChanged){
+    } else if (self.waterChanged == true && self.ratioChanged == true){
         [self calculateCoffee:self.brewMethod.waterAmount ratio:self.brewMethod.ratio];
         self.waterChanged = false;
         self.ratioChanged = false;
