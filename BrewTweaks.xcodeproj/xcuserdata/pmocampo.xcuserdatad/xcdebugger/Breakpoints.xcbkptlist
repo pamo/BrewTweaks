@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BrewTweaks/BrewMethodDetailViewController.m"
-         timestampString = "384304786.423096"
+         timestampString = "384308469.961443"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "217"
-         endingLineNumber = "217"
+         startingLineNumber = "215"
+         endingLineNumber = "215"
          landmarkName = "-coffeeUnitChanged"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,22 +47,22 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BrewTweaks/BrewMethodDetailViewController.m"
-         timestampString = "384304786.423096"
+         timestampString = "384308469.961443"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "302"
-         endingLineNumber = "302">
+         startingLineNumber = "300"
+         endingLineNumber = "300">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BrewTweaks/BrewMethodDetailViewController.m"
-         timestampString = "384304786.423096"
+         timestampString = "384308469.961443"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "305"
-         endingLineNumber = "305">
+         startingLineNumber = "303"
+         endingLineNumber = "303">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

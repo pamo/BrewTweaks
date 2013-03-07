@@ -93,7 +93,7 @@
 }
 -(double)calculateWater:(double)coffee ratio:(double) ratio{
     NSLog(@"Gimme water");
-    if (self.coffeeUnits.selectedSegmentIndex == 0) {
+    if (self.coffeeUnits.selectedSegmentIndex == 1) {
         coffee = coffee*28.0;
     }
     
@@ -120,7 +120,7 @@
     self.coffeeAmountInput.text = [NSString stringWithFormat:@"%.0lf", self.brewMethod.coffeeAmount];
     
     // If ounces are selected, convert
-    if (self.coffeeUnits.selectedSegmentIndex == 0) {
+    if (self.coffeeUnits.selectedSegmentIndex == 1) {
         self.brewMethod.coffeeAmount = self.brewMethod.coffeeAmount/28.0;
         self.coffeeAmountInput.text = [NSString stringWithFormat:@"%.2lf", self.brewMethod.coffeeAmount];
     }
@@ -159,7 +159,6 @@
     return YES;
 }
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
-    //NSLog(@"textFieldShouldEndEditing %@", textField.text);
     if(textField==self.waterAmountInput || textField==self.coffeeAmountInput || textField == self.tempInput || textField == self.ratioInput){
         [self valueChanged:textField];
         [textField resignFirstResponder];
@@ -175,7 +174,6 @@ return YES;
 }
 -(IBAction)valueChanged:(UITextField *)textField{
 
-    //NSLog(@"%@ changed to %@", textField, textField.text);
     if(textField == self.waterAmountInput){
         self.brewMethod.waterAmount = textField.text.doubleValue;
         self.waterChanged = true;
@@ -190,7 +188,7 @@ return YES;
         self.brewMethod.ratio = textField.text.doubleValue;
         self.ratioChanged = true;
     }
-    NSLog(@"%@ Changed: Water %d Coffee %d Ratio %d", textField.restorationIdentifier, self.waterChanged, self.coffeeChanged, self.ratioChanged);
+    NSLog(@"%@ Changed\n Water %d Coffee %d Ratio %d", textField.restorationIdentifier, self.waterChanged, self.coffeeChanged, self.ratioChanged);
     if (self.coffeeChanged == true && self.ratioChanged == true) {
         [self calculateWater:self.brewMethod.coffeeAmount ratio:self.brewMethod.ratio];
         self.coffeeChanged = false;
