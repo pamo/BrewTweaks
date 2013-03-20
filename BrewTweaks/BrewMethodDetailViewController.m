@@ -205,6 +205,10 @@ return YES;
         [self calculateCoffee:self.brewMethod.waterAmount ratio:self.brewMethod.ratio];
         self.waterChanged = false;
         self.ratioChanged = false;
+    } else if (self.waterChanged && !self.ratioChanged && !self.coffeeChanged){
+        [self calculateCoffee:self.brewMethod.waterAmount ratio:self.brewMethod.ratio];
+    } else if (self.coffeeChanged && !self.ratioChanged && !self.waterChanged){
+        [self calculateWater:self.brewMethod.coffeeAmount ratio:self.brewMethod.ratio];
     }
     NSLog(@"\nBoolean Reset: Water %d Coffee %d Ratio %d", self.waterChanged, self.coffeeChanged, self.ratioChanged);
 }
