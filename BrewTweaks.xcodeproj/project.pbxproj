@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C20B63917063E45009B911A /* bean.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C20B63817063E45009B911A /* bean.png */; };
+		1C20B63B17063E56009B911A /* bean_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C20B63A17063E56009B911A /* bean_retina.png */; };
 		1C6DA48316D048DB00DC1282 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6DA48216D048DB00DC1282 /* UIKit.framework */; };
 		1C6DA48516D048DB00DC1282 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6DA48416D048DB00DC1282 /* Foundation.framework */; };
 		1C6DA48716D048DB00DC1282 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6DA48616D048DB00DC1282 /* CoreGraphics.framework */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C20B63817063E45009B911A /* bean.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bean.png; sourceTree = "<group>"; };
+		1C20B63A17063E56009B911A /* bean_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bean_retina.png; sourceTree = "<group>"; };
 		1C6DA47F16D048DB00DC1282 /* BrewTweaks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrewTweaks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C6DA48216D048DB00DC1282 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1C6DA48416D048DB00DC1282 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -68,6 +72,8 @@
 		1C6DA47616D048DB00DC1282 = {
 			isa = PBXGroup;
 			children = (
+				1C20B63A17063E56009B911A /* bean_retina.png */,
+				1C20B63817063E45009B911A /* bean.png */,
 				1C6DA48816D048DB00DC1282 /* BrewTweaks */,
 				1C6DA48116D048DB00DC1282 /* Frameworks */,
 				1C6DA48016D048DB00DC1282 /* Products */,
@@ -184,6 +190,8 @@
 				1C6DA49716D048DB00DC1282 /* Default@2x.png in Resources */,
 				1C6DA49916D048DB00DC1282 /* Default-568h@2x.png in Resources */,
 				1C6DA49C16D048DB00DC1282 /* MainStoryboard.storyboard in Resources */,
+				1C20B63917063E45009B911A /* bean.png in Resources */,
+				1C20B63B17063E56009B911A /* bean_retina.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
