@@ -287,7 +287,6 @@
                         <outlet property="coffeeAmountInput" destination="pAY-j1-GBU" id="vVg-Bj-Kdp"/>
                         <outlet property="coffeeUnits" destination="QV4-Lz-1LI" id="nOM-CD-7fP"/>
                         <outlet property="grindSizeLabel" destination="Upj-Vy-EFV" id="N0K-TZ-fS4"/>
-                        <outlet property="pickerView" destination="gcv-aI-9u1" id="3Mr-K9-KIc"/>
                         <outlet property="ratioInput" destination="htJ-ks-OGW" id="mmr-WB-hjp"/>
                         <outlet property="tempInput" destination="Sxy-BC-Ics" id="04Y-Ny-EVm"/>
                         <outlet property="tempUnits" destination="enA-6S-YOF" id="o6E-yd-DU2"/>
@@ -296,13 +295,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Xr-qq-fPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pickerView contentMode="scaleToFill" id="gcv-aI-9u1">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <connections>
-                        <outlet property="delegate" destination="Wcy-aV-BTm" id="mqX-Za-JhL"/>
-                    </connections>
-                </pickerView>
             </objects>
             <point key="canvasLocation" x="-290" y="594"/>
         </scene>
