@@ -85,11 +85,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="999" text="Water (oz) : Coffee (g)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z21-g2-6Sp">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="999" text="Ratio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z21-g2-6Sp">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="187" id="hge-Dn-x9g"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
@@ -105,15 +105,22 @@
                                                         <outlet property="delegate" destination="gz9-HF-67X" id="UA0-gh-VAZ"/>
                                                     </connections>
                                                 </textField>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Water (oz) to Coffee (g)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kQ-YR-kp1">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="Z21-g2-6Sp" firstAttribute="leading" secondItem="fOD-xL-586" secondAttribute="leading" constant="10" id="Qrw-fu-kZM"/>
-                                            <constraint firstItem="htJ-ks-OGW" firstAttribute="centerY" secondItem="fOD-xL-586" secondAttribute="centerY" type="default" id="SqZ-MB-jhc"/>
-                                            <constraint firstItem="htJ-ks-OGW" firstAttribute="baseline" secondItem="Z21-g2-6Sp" secondAttribute="baseline" type="default" id="VeG-cC-o4N"/>
+                                            <constraint firstItem="2kQ-YR-kp1" firstAttribute="baseline" secondItem="htJ-ks-OGW" secondAttribute="baseline" type="default" id="1wy-37-QMN"/>
+                                            <constraint firstItem="2kQ-YR-kp1" firstAttribute="leading" secondItem="Z21-g2-6Sp" secondAttribute="leading" type="default" id="b9f-Ck-aA8"/>
                                             <constraint firstAttribute="trailing" secondItem="htJ-ks-OGW" secondAttribute="trailing" constant="11" id="ghH-aR-GPf"/>
-                                            <constraint firstItem="Z21-g2-6Sp" firstAttribute="top" secondItem="fOD-xL-586" secondAttribute="top" constant="11" id="pMc-VO-Gpr"/>
+                                            <constraint firstItem="Z21-g2-6Sp" firstAttribute="leading" secondItem="fOD-xL-586" secondAttribute="leading" constant="10" id="qQF-Uc-FX0"/>
+                                            <constraint firstItem="htJ-ks-OGW" firstAttribute="centerY" secondItem="fOD-xL-586" secondAttribute="centerY" type="default" id="qRE-PG-73G"/>
+                                            <constraint firstAttribute="bottom" secondItem="2kQ-YR-kp1" secondAttribute="bottom" constant="2" id="xUl-eV-V4Z"/>
+                                            <constraint firstItem="Z21-g2-6Sp" firstAttribute="top" secondItem="fOD-xL-586" secondAttribute="top" constant="2" id="ybE-m7-SPr"/>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WaterCell" id="lDz-nx-7BA">
