@@ -24,13 +24,13 @@
         [textField setKeyboardType:keyboardType];
         self.barStyle = UIBarStyleBlackTranslucent;
         self.items = [NSArray arrayWithObjects:
-                     /* [[UIBarButtonItem alloc]initWithTitle:@"Cancel"
+                      [[UIBarButtonItem alloc]initWithTitle:@"Cancel"
                                                       style:UIBarButtonItemStyleBordered
                                                      target:self
-                                                     action:@selector(cancelNumberPad)],*/
+                                                     action:@selector(cancelNumberPad)],
                       [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
                                                                    target:nil action:nil],
-                      [[UIBarButtonItem alloc]initWithTitle:@"Done"
+                      [[UIBarButtonItem alloc]initWithTitle:@"Calculate"
                                                       style:UIBarButtonItemStyleDone
                                                      target:self
                                                      action:@selector(doneWithNumberPad)],
@@ -45,13 +45,14 @@
 {
     
     [textField resignFirstResponder];
-    textField.text = @"";
+
     [self.delegate doneCancelNumberPadToolbarDelegate:self didClickCancel:textField];
 }
 
 -(void)doneWithNumberPad
 {
     [textField resignFirstResponder];
+
     [self.delegate doneCancelNumberPadToolbarDelegate:self didClickDone:textField];
 }
 @end

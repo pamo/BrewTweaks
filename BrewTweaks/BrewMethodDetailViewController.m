@@ -48,6 +48,7 @@
         self.tempInput.text = [NSString stringWithFormat:@"%.0lf", theBrewMethod.temp];
         
         self.ratioInput.text = [NSString stringWithFormat:@"%.2lf", [self calculateRatio:theBrewMethod.waterAmount coffee:theBrewMethod.coffeeAmount units:0]];
+        [self.ratioInput setBackgroundColor:[UIColor whiteColor]];        
         
         DoneCancelNumberPadToolbar *waterDecimalToolbar = [[DoneCancelNumberPadToolbar alloc] initWithTextField:self.waterAmountInput withKeyboardType:UIKeyboardTypeDecimalPad];
         self.waterAmountInput.inputAccessoryView = waterDecimalToolbar;
@@ -78,6 +79,7 @@
 }
 -(double)calculateRatio:(double) water coffee:(double) coffee units:(int)units{
     NSLog(@"Gimme ratio");
+    [self.ratioInput setBackgroundColor:[UIColor yellowColor]];
     switch (units) {
         case 0:
             water = water/28.0;
@@ -92,6 +94,7 @@
     
 }
 -(double)calculateWater:(double)coffee ratio:(double) ratio{
+    [self.waterAmountInput setBackgroundColor:[UIColor yellowColor]];
     if (self.coffeeUnits.selectedSegmentIndex == 1) {
         coffee = coffee*28.0;
     }
@@ -110,7 +113,8 @@
     return self.brewMethod.waterAmount;
 }
 
--(double)calculateCoffee:(double)water ratio:(double) ratio{  
+-(double)calculateCoffee:(double)water ratio:(double) ratio{
+    [self.coffeeAmountInput setBackgroundColor:[UIColor yellowColor]];
     if (self.waterUnits.selectedSegmentIndex == 0) {
         water = water/28.0;
     }
@@ -197,14 +201,20 @@ return YES;
         [self calculateWater:self.brewMethod.coffeeAmount ratio:self.brewMethod.ratio];
         self.coffeeChanged = false;
         self.ratioChanged = false;
+        [self.coffeeAmountInput setBackgroundColor:[UIColor whiteColor]];
+        [self.ratioInput setBackgroundColor:[UIColor whiteColor]];
     } else if (self.coffeeChanged == true && self.waterChanged == true){
         [self calculateRatio:self.brewMethod.waterAmount coffee:self.brewMethod.coffeeAmount units:self.waterUnits.selectedSegmentIndex];
         self.coffeeChanged = false;
         self.waterChanged = false;
+        [self.coffeeAmountInput setBackgroundColor:[UIColor whiteColor]];
+        [self.waterAmountInput setBackgroundColor:[UIColor whiteColor]];
     } else if (self.waterChanged == true && self.ratioChanged == true){
         [self calculateCoffee:self.brewMethod.waterAmount ratio:self.brewMethod.ratio];
         self.waterChanged = false;
         self.ratioChanged = false;
+        [self.waterAmountInput setBackgroundColor:[UIColor whiteColor]];
+        [self.ratioInput setBackgroundColor:[UIColor whiteColor]];        
     } else if (self.waterChanged && !self.ratioChanged && !self.coffeeChanged){
         [self calculateCoffee:self.brewMethod.waterAmount ratio:self.brewMethod.ratio];
     } else if (self.coffeeChanged && !self.ratioChanged && !self.waterChanged){
