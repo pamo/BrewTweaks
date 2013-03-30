@@ -57,6 +57,7 @@
         self.coffeeAmountInput.inputAccessoryView = coffeeDecimalToolbar;
         
         DoneCancelNumberPadToolbar *tempDecimalToolbar = [[DoneCancelNumberPadToolbar alloc] initWithTextField:self.tempInput withKeyboardType:UIKeyboardTypeDecimalPad];
+        [tempDecimalToolbar.items[2] setTitle:@"Set"];
         self.tempInput.inputAccessoryView = tempDecimalToolbar;
         
         DoneCancelNumberPadToolbar *ratioDecimalToolbar = [[DoneCancelNumberPadToolbar alloc] initWithTextField:self.ratioInput withKeyboardType:UIKeyboardTypeDecimalPad];
