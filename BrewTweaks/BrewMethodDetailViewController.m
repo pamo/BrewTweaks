@@ -157,6 +157,7 @@
 }
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
     if(textField==self.waterAmountInput || textField==self.coffeeAmountInput || textField == self.tempInput || textField == self.ratioInput){
+        [textField setBackgroundColor:[UIColor whiteColor]];
         [textField isFirstResponder];
     }
     return YES;
