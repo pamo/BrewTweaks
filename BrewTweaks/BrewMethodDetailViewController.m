@@ -109,7 +109,7 @@
         self.brewMethod.waterAmount = self.brewMethod.waterAmount*28.0;
         self.waterAmountInput.text = [NSString stringWithFormat:@"%.0lf", self.brewMethod.waterAmount];
     }
-    //[self resetBooleans];
+    
     NSLog(@"Set water to %.0lf", self.brewMethod.waterAmount);
     return self.brewMethod.waterAmount;
 }
@@ -129,7 +129,6 @@
         self.coffeeAmountInput.text = [NSString stringWithFormat:@"%.2lf", self.brewMethod.coffeeAmount];
     }
     
-    //[self resetBooleans];
     NSLog(@"Gimme coffee %.0lf", self.brewMethod.coffeeAmount);
     return self.brewMethod.coffeeAmount;
 }
@@ -141,25 +140,23 @@
 }
 -(void)doneCancelNumberPadToolbarDelegate:(DoneCancelNumberPadToolbar *)controller didClickDone:(UITextField *)textField
 {
-    //NSLog(@"%@", textField.text);
+ 
 }
 
 -(void)doneCancelNumberPadToolbarDelegate:(DoneCancelNumberPadToolbar *)controller didClickCancel:(UITextField *)textField
 {
 
-    //NSLog(@"Old Text: %@, Canceled: %@", textField.text, [textField description]);
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {;
 
     if ((textField == self.waterAmountInput) || (textField == self.coffeeAmountInput) || (textField == self.tempInput || textField == self.ratioInput)) {
-        //[self valueChanged:textField];
+
         [textField resignFirstResponder];
     }
     return YES;
 }
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
     if(textField==self.waterAmountInput || textField==self.coffeeAmountInput || textField == self.tempInput || textField == self.ratioInput){
-        //[self valueChanged:textField];
         [textField isFirstResponder];
     }
     return YES;
@@ -174,7 +171,7 @@
 -(BOOL)textFieldShouldClear:(UITextField *)textField{
     NSLog(@"Texfield cleared");
     if(textField==self.waterAmountInput || textField==self.coffeeAmountInput || textField == self.tempInput || textField == self.ratioInput){
-        // [self valueChanged:textField];
+        
         [textField resignFirstResponder];
     }
 return YES;
@@ -197,6 +194,7 @@ return YES;
     }
     NSLog(@"\n%@ Changed\n  ########## Boolean Values ########## \nWater %d Coffee %d Ratio %d", textField.restorationIdentifier, self.waterChanged, self.coffeeChanged, self.ratioChanged);
     NSLog(@"\n########## Input Values ########## \nRatio: %.2lf, Water: %.2lf, Coffee: %.2lf", self.brewMethod.ratio, self.brewMethod.waterAmount, self.brewMethod.coffeeAmount);
+    
     if (self.coffeeChanged == true && self.ratioChanged == true) {
         NSLog(@"Gimme water!");
         [self calculateWater:self.brewMethod.coffeeAmount ratio:self.brewMethod.ratio];
@@ -245,7 +243,6 @@ return YES;
             break;
     }
     
-    // [self calculateRatio:self.brewMethod.waterAmount coffee:self.brewMethod.coffeeAmount units:self.waterUnits.selectedSegmentIndex];
     
 }
 -(IBAction)waterUnitChanged{
@@ -265,7 +262,6 @@ return YES;
             break;
     }
     
-    // [self calculateRatio:self.brewMethod.waterAmount coffee:self.brewMethod.coffeeAmount units:self.waterUnits.selectedSegmentIndex];
 }
 -(IBAction)tempUnitChanged{
     self.brewMethod.temp = self.tempInput.text.doubleValue;
