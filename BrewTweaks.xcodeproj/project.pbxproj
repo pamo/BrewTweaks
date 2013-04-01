@@ -297,14 +297,14 @@
 		1C6DA4A316D048DB00DC1282 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Fox (AT6N6S92NC)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Kofink (8526BX8443)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BrewTweaks/BrewTweaks-Prefix.pch";
 				INFOPLIST_FILE = "BrewTweaks/BrewTweaks-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "FDAD1A9B-9F31-438A-97F8-36E3051C0BF5";
+				PROVISIONING_PROFILE = "F0771A77-C488-4CF6-8A31-67AA19793A78";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -312,14 +312,14 @@
 		1C6DA4A416D048DB00DC1282 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Fox (AT6N6S92NC)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Kofink (8526BX8443)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BrewTweaks/BrewTweaks-Prefix.pch";
 				INFOPLIST_FILE = "BrewTweaks/BrewTweaks-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "FDAD1A9B-9F31-438A-97F8-36E3051C0BF5";
+				PROVISIONING_PROFILE = "F0771A77-C488-4CF6-8A31-67AA19793A78";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
