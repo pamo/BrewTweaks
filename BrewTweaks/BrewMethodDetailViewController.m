@@ -7,6 +7,7 @@
 //
 
 #import "BrewMethodDetailViewController.h"
+#import "BrewMethodDataController.h"
 #import "BrewMethod.h"
 #include <math.h>
 
@@ -70,6 +71,11 @@
 
     }
     [self resetBooleans];
+    
+}
+- (IBAction)reloadValues {
+    NSLog(@"Reload table");
+    [self configureView];
     
 }
 -(void) resetBooleans{

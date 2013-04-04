@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="gyH-RD-Svz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="gyH-RD-Svz">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -21,7 +21,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h57-gb-ToT">
-                                            <rect key="frame" x="129" y="9" width="42" height="24"/>
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -232,6 +232,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="i0E-vC-Y6x">
                         <barButtonItem key="backBarButtonItem" title="Back" id="fQU-Ii-yaD"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="QFS-Fp-46Z">
+                            <connections>
+                                <action selector="reloadValues" destination="gz9-HF-67X" id="Im3-0k-gos"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
@@ -239,6 +244,7 @@
                         <outlet property="coffeeUnits" destination="QV4-Lz-1LI" id="nOM-CD-7fP"/>
                         <outlet property="grindSizeLabel" destination="Upj-Vy-EFV" id="N0K-TZ-fS4"/>
                         <outlet property="ratioInput" destination="htJ-ks-OGW" id="mmr-WB-hjp"/>
+                        <outlet property="resetButton" destination="QFS-Fp-46Z" id="am3-Jw-TGs"/>
                         <outlet property="tempInput" destination="Sxy-BC-Ics" id="04Y-Ny-EVm"/>
                         <outlet property="tempUnits" destination="enA-6S-YOF" id="o6E-yd-DU2"/>
                         <outlet property="waterAmountInput" destination="cZc-kw-UJX" id="tIf-fU-fnQ"/>
@@ -270,6 +276,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BrewMethodDetailViewController.h"/>
             <relationships>
                 <relationship kind="action" name="coffeeUnitChanged"/>
+                <relationship kind="action" name="reloadValues"/>
                 <relationship kind="action" name="tempUnitChanged"/>
                 <relationship kind="action" name="valueChanged:" candidateClass="UITextField"/>
                 <relationship kind="action" name="waterUnitChanged"/>
@@ -278,6 +285,7 @@
                 <relationship kind="outlet" name="grindSizeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="pickerView" candidateClass="UIPickerView"/>
                 <relationship kind="outlet" name="ratioInput" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="resetButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="tempInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="tempUnits" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="waterAmountInput" candidateClass="UITextField"/>

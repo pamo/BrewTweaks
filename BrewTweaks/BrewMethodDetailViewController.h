@@ -10,10 +10,13 @@
 #import "DoneCancelNumberPadToolbar.h"
 
 @class BrewMethod;
+@class BrewMethodDataController;
+
 @interface BrewMethodDetailViewController : UITableViewController <DoneCancelNumberPadToolbarDelegate, UITextFieldDelegate>
 
 
 @property (strong, nonatomic) BrewMethod *brewMethod;
+@property (strong, nonatomic) BrewMethodDataController *dataController;
 
 @property (weak, nonatomic) IBOutlet UILabel *grindSizeLabel;
 @property (weak, nonatomic) IBOutlet UITextField *waterAmountInput;
@@ -24,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *coffeeUnits;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *tempUnits;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *resetButton;
 @property NSMutableArray *grindTypes;
 @property BOOL coffeeChanged;
 @property BOOL waterChanged;
@@ -33,4 +37,5 @@
 -(IBAction)waterUnitChanged;
 -(IBAction)tempUnitChanged;
 -(IBAction)valueChanged:(UITextField *) textField;
+-(IBAction)reloadValues;
 @end
