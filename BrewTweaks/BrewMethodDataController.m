@@ -65,6 +65,15 @@
 - (BrewMethod *) objectInListAtIndex:(NSUInteger)theIndex{
     return [self.masterBrewMethodList objectAtIndex:theIndex];
 }
+- (BrewMethod *) findMethod:(NSString *)theName{
+    BrewMethod *method = nil;
+    for (int i = 0; i < self.masterBrewMethodList.count; i++) {
+        if ([self objectInListAtIndex:i].name == theName) {
+            method = [self objectInListAtIndex:i];
+        }
+    }
+    return method;
+}
 -(void)addBrewMethodWithBrewMethod:(BrewMethod *)method{
     [self.masterBrewMethodList addObject:method];
 }

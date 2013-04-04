@@ -12,6 +12,7 @@
 @property (nonatomic, copy) NSMutableArray *masterBrewMethodList;
 - (NSUInteger)countOfList;
 - (BrewMethod *)objectInListAtIndex:(NSUInteger)theIndex;
+- (BrewMethod *)findMethod:(NSString *)theName;
 - (void)addBrewMethodWithBrewMethod:(BrewMethod *)method;
 @end
 

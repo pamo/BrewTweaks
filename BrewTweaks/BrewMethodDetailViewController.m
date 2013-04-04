@@ -31,6 +31,8 @@
 
 - (void)configureView
 {
+    self.dataController = [[BrewMethodDataController alloc] init];
+
     // Update the user interface for the detail item.
     BrewMethod *theBrewMethod = self.brewMethod;
     self.navigationItem.backBarButtonItem.title = @"Back";
@@ -75,6 +77,7 @@
 }
 - (IBAction)reloadValues {
     NSLog(@"Reload table");
+    self.brewMethod = [self.dataController findMethod:self.brewMethod.name];
     [self configureView];
     
 }
