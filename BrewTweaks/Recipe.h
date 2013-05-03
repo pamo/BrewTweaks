@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BrewMethod.h"
 
 @interface Recipe : NSObject
+@property (nonatomic, copy) NSString *roaster;
+@property (nonatomic, copy) NSString *coffee;
+@property (nonatomic, copy) BrewMethod *method;
+@property (nonatomic, strong) NSDate *date;
+
+-(id)initWithBrewMethod:(BrewMethod *)method roaster:(NSString *)roaster coffee:(NSString *)coffee;
+
 
 @end

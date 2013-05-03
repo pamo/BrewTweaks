@@ -8,6 +8,18 @@
 
 #import "Recipe.h"
 
-@implementation Recipe
 
+@implementation Recipe
+-(id)initWithBrewMethod:(BrewMethod *)method roaster:(NSString *)roaster coffee:(NSString *)coffee{
+    self = [super init];
+    if(self){
+        _method = method;
+        _roaster = roaster;
+        _coffee = coffee;
+        _date = [NSDate date]; // today
+
+        
+        return self;
+    }
+    return nil;}
 @end
