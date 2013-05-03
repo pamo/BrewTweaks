@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1C20B63917063E45009B911A /* bean.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C20B63817063E45009B911A /* bean.png */; };
 		1C20B63B17063E56009B911A /* bean_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C20B63A17063E56009B911A /* bean_retina.png */; };
+		1C3269BD1733E8D800BF929C /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3269BC1733E8D800BF929C /* Recipe.m */; };
 		1C6DA48316D048DB00DC1282 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6DA48216D048DB00DC1282 /* UIKit.framework */; };
 		1C6DA48516D048DB00DC1282 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6DA48416D048DB00DC1282 /* Foundation.framework */; };
 		1C6DA48716D048DB00DC1282 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6DA48616D048DB00DC1282 /* CoreGraphics.framework */; };
@@ -29,6 +30,8 @@
 /* Begin PBXFileReference section */
 		1C20B63817063E45009B911A /* bean.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bean.png; sourceTree = "<group>"; };
 		1C20B63A17063E56009B911A /* bean_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bean_retina.png; sourceTree = "<group>"; };
+		1C3269BB1733E8D800BF929C /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
+		1C3269BC1733E8D800BF929C /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
 		1C6DA47F16D048DB00DC1282 /* BrewTweaks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrewTweaks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C6DA48216D048DB00DC1282 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1C6DA48416D048DB00DC1282 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -104,6 +107,8 @@
 				1C6DA49116D048DB00DC1282 /* BrewTweaksAppDelegate.h */,
 				1C6DA49216D048DB00DC1282 /* BrewTweaksAppDelegate.m */,
 				1C6DA49A16D048DB00DC1282 /* MainStoryboard.storyboard */,
+				1C3269BB1733E8D800BF929C /* Recipe.h */,
+				1C3269BC1733E8D800BF929C /* Recipe.m */,
 				1C6DA4A516D04EFF00DC1282 /* MainTableViewController.h */,
 				1C6DA4A616D04EFF00DC1282 /* MainTableViewController.m */,
 				1C6DA4C816D1B19500DC1282 /* BrewMethodDetailViewController.h */,
@@ -209,6 +214,7 @@
 				1C6DA4AD16D161FF00DC1282 /* BrewMethodDataController.m in Sources */,
 				1C6DA4CA16D1B19500DC1282 /* BrewMethodDetailViewController.m in Sources */,
 				1C8A69AB16DC145800C0ED92 /* DoneCancelNumberPadToolbar.m in Sources */,
+				1C3269BD1733E8D800BF929C /* Recipe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
